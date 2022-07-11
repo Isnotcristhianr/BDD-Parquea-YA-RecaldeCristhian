@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
+    <link href="../imgs/ParqueaYa  icon (1).png" rel="icon" />
     <p style="background-color: rgb(0, 74, 173)">
         <asp:Image ID="Image1" runat="server" ImageUrl="~/imgs/ParqueaYa (1500 × 50&nbsp;px).png" Height="45px" />
     </p>
@@ -29,11 +30,6 @@
             height: 131px;
         }
 
-        .auto-style8 {
-            text-align: center;
-            height: 48px;
-        }
-
         .auto-style9 {
             width: 574px;
             margin-left: 0px;
@@ -45,6 +41,10 @@
 
         .auto-style11 {
             margin-left: 662px;
+        }
+
+        .auto-style12 {
+            text-align: center;
         }
 
         </style>
@@ -68,7 +68,7 @@
         </div>
         <div>
 
-            <asp:Button ID="btnEmpezar" runat="server" OnClick="btnEmpezar_Click" Text="Empezar" CssClass="auto-style11" BackColor="White" Font-Bold="True" ForeColor="#004AAD" Height="40px" Width="118px" />
+            <asp:Button ID="btnEmpezar" runat="server" OnClick="btnEmpezar_Click" Text="Empezar" CssClass="auto-style11" BackColor="White" Font-Bold="True" ForeColor="#004AAD" Height="40px" Width="118px"/>
 
             <br />
 
@@ -77,10 +77,10 @@
 </body>
 
 <footer>
-
-    <p class="auto-style8" style="background-color: #000000">
-        <span style="color: rgb(255, 255, 255); font-family: arial, sans-serif-light, sans-serif; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 200; letter-spacing: 0px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(32, 33, 36); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: block; float: none; background-attachment: fixed; background-repeat: no-repeat; padding-top: 10px;">Copyright © Cristhian Recalde - ItsnotCristhian </span>
-    </p>
+    
+        <div class="auto-style12" style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bold; font-style: normal; text-transform: none; color: #FFFFFF; background-color: #000000">
+            <small>&copy; 2022 <b>IsnotCrsthianr</b> - Todos los Derechos Reservados - Cristhian Recalde</small>
+        </div>
 
 </footer>
 

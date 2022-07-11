@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace BDD_Parquea_YA_RecaldeCristhian.pags
 {
-    public partial class index : System.Web.UI.Page
+    public partial class autos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -45,6 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -126,27 +127,46 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="imgs\90421-car-in-movement.gif" />
+    <Content Include="imgs\94350-gears-lottie-animation.gif" />
+    <Content Include="imgs\animation_500_l5fjjsp9.gif" />
+    <Content Include="imgs\animation_500_l5fkmozk.gif" />
+    <Content Include="imgs\animation_500_l5fm1izw.gif" />
     <Content Include="imgs\animation_640_l5e8416y.gif" />
     <Content Include="imgs\animation_640_l5fea9ve.gif" />
     <Content Include="imgs\bannerWeb2.png" />
     <Content Include="imgs\bannerWebBlur.png" />
+    <Content Include="imgs\car %281%29.png" />
+    <Content Include="imgs\car.png" />
     <Content Include="imgs\cell.png" />
+    <Content Include="imgs\clock.png" />
+    <Content Include="imgs\configure.png" />
+    <Content Include="imgs\date %281%29.png" />
     <Content Include="imgs\date.png" />
     <Content Include="imgs\email.png" />
+    <Content Include="imgs\github.png" />
     <Content Include="imgs\home %281%29.png" />
     <Content Include="imgs\identification-card.png" />
     <Content Include="imgs\ivana-cajina-WPVtT0MEM00-unsplash.jpg" />
     <Content Include="imgs\location.png" />
     <Content Include="imgs\lock.png" />
+    <Content Include="imgs\management.png" />
+    <Content Include="imgs\money %281%29.png" />
+    <Content Include="imgs\money.png" />
     <Content Include="imgs\name-card.png" />
     <Content Include="imgs\ParqueaYa  icon %281%29.png" />
     <Content Include="imgs\ParqueaYa %281500 × 50 px%29.png" />
     <Content Include="imgs\ParqueaYa %28500 × 250 px%29.png" />
+    <Content Include="imgs\payment.png" />
     <Content Include="imgs\person.png" />
     <Content Include="imgs\production ID_4047768.mp4" />
     <Content Include="imgs\user %284%29.png" />
     <Content Include="pags\admin.aspx" />
     <Content Include="pags\agregar.aspx" />
+    <Content Include="pags\autos.aspx" />
+    <Content Include="pags\clientes.aspx" />
+    <Content Include="pags\cobros.aspx" />
+    <Content Include="pags\config.aspx" />
     <Content Include="pags\index.aspx" />
     <Content Include="pags\inicio.aspx" />
     <Content Include="pags\olvide.aspx" />
@@ -226,6 +246,34 @@
     </Compile>
     <Compile Include="pags\agregar.aspx.designer.cs">
       <DependentUpon>agregar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pags\autos.aspx.cs">
+      <DependentUpon>autos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pags\autos.aspx.designer.cs">
+      <DependentUpon>autos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pags\clientes.aspx.cs">
+      <DependentUpon>clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pags\clientes.aspx.designer.cs">
+      <DependentUpon>clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pags\cobros.aspx.cs">
+      <DependentUpon>cobros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pags\cobros.aspx.designer.cs">
+      <DependentUpon>cobros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pags\config.aspx.cs">
+      <DependentUpon>config.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pags\config.aspx.designer.cs">
+      <DependentUpon>config.aspx</DependentUpon>
     </Compile>
     <Compile Include="pags\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

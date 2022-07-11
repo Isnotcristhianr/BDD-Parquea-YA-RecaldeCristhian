@@ -17,17 +17,13 @@
             height: 288px;
         }
 
-        .auto-style8 {
-            height: 26px;
-        }
-
         .auto-style9 {
             margin-left: 0px;
             margin-bottom: 0px;
         }
 
         .auto-style16 {
-            height: 695px;
+            height: 757px;
         }
 
         .auto-style18 {
@@ -60,6 +56,17 @@
         .auto-style26 {
             font-size: xx-small;
         }
+        .auto-style27 {
+            color: #004AAD;
+        }
+        .auto-style28 {
+            text-align: center;
+            width: 382px;
+            height: 80px;
+        }
+        .auto-style29 {
+            text-align: center;
+        }
     </style>
     <div style="background-color: rgb(0, 74, 173)">
         <asp:Image ID="Image2" runat="server" ImageUrl="~/imgs/ParqueaYa (1500 × 50&nbsp;px).png" Height="45px" CssClass="auto-style23" />
@@ -68,12 +75,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="auto-style16">
+        <section style="box-shadow: 6px 20px 10px black">
+ <div class="auto-style16">
             <asp:Panel ID="Panel1" runat="server" Height="203px">
             </asp:Panel>
-            <table class="auto-style2" style="border-width: 1px; border-color: #CCCCCC; background-color: #FFFFFF;" id="tblLogin">
+            <table class="auto-style2" style="border-width: 1px; border-color: #CCCCCC; background-color: #FFFFFF;border-radius:3%" id="tblLogin">
                 <tr>
-                    <td class="auto-style19">
+                    <td class="auto-style28">
                         <asp:Image ID="Image6" runat="server" Height="67px" ImageUrl="~/imgs/ParqueaYa  icon (1).png" Width="79px" />
                     </td>
                     <td class="auto-style24" rowspan="8">
@@ -82,19 +90,19 @@
                 </tr>
                 <tr>
                     <td class="auto-style18">
-                        <asp:Label ID="Label1" runat="server" Text="Inicio de Sesion"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Inicio de Sesion" CssClass="auto-style27"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style18">
                         <asp:Image ID="Image3" runat="server" Height="24px" ImageUrl="~/imgs/person.png" Width="26px" />
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style9" MaxLength="50" Width="275px" placeholder="Usuario"></asp:TextBox>
+                        <asp:TextBox ID="txtUser" runat="server" CssClass="auto-style9" MaxLength="50" Width="275px" placeholder="Usuario"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style19">
                         <asp:Image ID="Image4" runat="server" Height="24px" ImageUrl="~/imgs/lock.png" Width="26px" />
-                        <asp:TextBox ID="TextBox2" runat="server" CssClass="auto-style9" MaxLength="50" Width="276px" placeholder="Contraseña" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="txtPassw" runat="server" CssClass="auto-style9" MaxLength="50" Width="276px" placeholder="Contraseña" TextMode="Password"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -119,15 +127,17 @@
                 </tr>
             </table>
         </div>
+        </section>
+       
     </form>
 
 </body>
 
 <footer>
-
-    <p class="auto-style8" style="background-color: #000000">
-        <span style="color: rgb(255, 255, 255); font-family: arial, sans-serif-light, sans-serif; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 200; letter-spacing: 0px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(32, 33, 36); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: block; float: none; background-attachment: fixed; background-repeat: no-repeat; padding-top: 10px;">Copyright © Cristhian Recalde - ItsnotCristhian </span>
-    </p>
+    
+        <div class="auto-style29" style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bold; font-style: normal; text-transform: none; color: #FFFFFF; background-color: #000000">
+            <small>&copy; 2022 <b>IsnotCrsthianr</b> - Todos los Derechos Reservados - Cristhian Recalde</small>
+        </div>
 
 </footer>
 

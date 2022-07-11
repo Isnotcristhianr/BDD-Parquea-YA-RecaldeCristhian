@@ -13,4 +13,10 @@
         </div>
     </form>
 </body>
+    <footer class="pie-pagina">
+    
+        <div class="grupo-2">
+            <small>&copy; 2022 <b>Orlo</b> - Todos los Derechos Reservados</small>
+        </div>
+    </footer>
 </html>

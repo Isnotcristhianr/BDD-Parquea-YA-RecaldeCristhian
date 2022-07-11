@@ -11,7 +11,10 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
 
+            }
         }
 
         protected void btnRegistrarse_Click(object sender, EventArgs e)

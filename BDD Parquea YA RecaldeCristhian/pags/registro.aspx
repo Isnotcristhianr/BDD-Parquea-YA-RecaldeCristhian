@@ -5,10 +5,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Registro de Usuarios
-    </title>
-   
+    <title>Registro de Usuarios</title>
+           <link href="../imgs/ParqueaYa  icon (1).png" rel="icon" />
+
     <style type="text/css">
 
 
@@ -60,6 +61,17 @@
             width: 382px;
         }
 
+        .auto-style28 {
+            height: 26px;
+            text-align: center;
+            width: 382px;
+            color: #004AAD;
+        }
+
+        .auto-style29 {
+            text-align: center;
+        }
+
         </style>
      <div style="background-color: rgb(0, 74, 173)">
         <asp:Image ID="Image2" runat="server" ImageUrl="~/imgs/ParqueaYa (1500 × 50&nbsp;px).png" Height="45px" CssClass="auto-style23" />
@@ -83,7 +95,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style18">
+                    <td class="auto-style28">
                         Registrarse</td>
                 </tr>
                 <tr>
@@ -145,7 +157,7 @@
                         <asp:Image ID="Image13" runat="server" ImageUrl="~/imgs/date.png" />
 &nbsp;Fecha<br />
                         <div class="auto-style25">
-                            <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="134px" NextPrevFormat="ShortMonth" Width="262px">
+                            <asp:Calendar ID="cFecha" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="134px" NextPrevFormat="ShortMonth" Width="262px">
                                 <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                                 <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                                 <OtherMonthDayStyle ForeColor="#999999" />
@@ -178,11 +190,10 @@
 </body>
 
     
-<footer>
-
-    <p class="auto-style8" style="background-color: #000000">
-        <span style="color: rgb(255, 255, 255); font-family: arial, sans-serif-light, sans-serif; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 200; letter-spacing: 0px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(32, 33, 36); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: block; float: none; background-attachment: fixed; background-repeat: no-repeat; padding-top: 10px;">Copyright © Cristhian Recalde - ItsnotCristhian </span>
-    </p>
+<footer>    
+        <div class="auto-style29" style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bold; font-style: normal; text-transform: none; color: #FFFFFF; background-color: #000000">
+            <small>&copy; 2022 <b>IsnotCrsthianr</b> - Todos los Derechos Reservados - Cristhian Recalde</small>
+        </div>
 
 </footer>
 

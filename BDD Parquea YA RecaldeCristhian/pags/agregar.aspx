@@ -8,8 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Registro de Usuarios
     </title>
-    <!--CSS-->
-        <link href="../assets/styles.css" />
+   <!--CSS-->
+    <link href="../assets/styles.css" rel="stylesheet" />
 
     <style type="text/css">
 
@@ -62,6 +62,17 @@
             width: 382px;
         }
 
+        .auto-style28 {
+            height: 26px;
+            text-align: center;
+            width: 382px;
+            color: #004AAD;
+        }
+
+        .auto-style29 {
+            text-align: center;
+        }
+
         </style>
      <div style="background-color: rgb(0, 74, 173)">
         <asp:Image ID="Image2" runat="server" ImageUrl="~/imgs/ParqueaYa (1500 × 50&nbsp;px).png" Height="45px" CssClass="auto-style23" />
@@ -73,7 +84,7 @@
         <div class="auto-style16">
             <asp:Panel ID="Panel1" runat="server" Height="46px">
             </asp:Panel>
-            <table class="auto-style2" style="border-width: 1px; border-color: #CCCCCC; background-color: #FFFFFF;" id="tblLogin">
+            <table class="auto-style2" style="border-width: 1px; border-color: #CCCCCC;border-radius:3%; background-color: #FFFFFF;" id="tblLogin">
                 <tr>
                     <td class="auto-style19">
                         <asp:Image ID="Image6" runat="server" Height="67px" ImageUrl="~/imgs/ParqueaYa  icon (1).png" Width="79px" />
@@ -83,7 +94,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style18">
+                    <td class="auto-style28">
                         Registrarse</td>
                 </tr>
                 <tr>
@@ -177,12 +188,11 @@
     </form>
 </body>
 
-    
 <footer>
-
-    <p class="auto-style8" style="background-color: #000000">
-        <span style="color: rgb(255, 255, 255); font-family: arial, sans-serif-light, sans-serif; font-size: 20px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 200; letter-spacing: 0px; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(32, 33, 36); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: block; float: none; background-attachment: fixed; background-repeat: no-repeat; padding-top: 10px;">Copyright © Cristhian Recalde - ItsnotCristhian </span>
-    </p>
+    
+        <div class="auto-style29" style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bold; font-style: normal; text-transform: none; color: #FFFFFF; background-color: #000000">
+            <small>&copy; 2022 <b>IsnotCrsthianr</b> - Todos los Derechos Reservados - Cristhian Recalde</small>
+        </div>
 
 </footer>
 
