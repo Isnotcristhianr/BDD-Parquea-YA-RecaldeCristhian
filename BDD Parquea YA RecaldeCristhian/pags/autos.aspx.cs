@@ -15,13 +15,16 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
             {
 
             }
+            
+            txtDate.Text = DateTime.Now.ToShortDateString();
+            txtHoraIngreso.Text = DateTime.Now.ToString("hh:mm");
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtCedula.Text == "" && txtMatricula.Text == "" && ddlTipoAutomovil.Text == "Tipo de Automovil" && txtHoraIngreso.Text == "" && txtDate.Text == "")
+                if (txtCedula.Text == "" && txtMatricula.Text == "" && ddlTipoAutomovil.Text == "Tipo de Automovil" && txtHoraIngreso.Text == "")
                 {
                     MsgBox("alert", "Ingrese los datos para crear el ingreso de automovil");
                 }
