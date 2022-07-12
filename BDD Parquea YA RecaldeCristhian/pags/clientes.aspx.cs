@@ -15,20 +15,72 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
         {
                 if (!Page.IsPostBack)
                 {
-                if (!Page.IsPostBack)
-                {
 
                 }
-            }
             }
 
         protected void btnCrear_Click(object sender, EventArgs e)
         {
-            MsgBox("alert", "Se ha creado el cliente");
-            txtCedula.Text = "";
+            try { 
+                if (txtCedula.Text == "" && txtNombre.Text == "" && txtApellido.Text == "" && txtDireccion.Text == "" && txtDireccion.Text == "" && txtEmail.Text == "")
+                {
+                    MsgBox("alert", "Ingrese los datos para crear el cliente");
+                }
+                else {
+                    if (txtCedula.Text == "")
+                    {
+                        MsgBox("alert", "Ingrese una cedula para crear el cliente");
+                    }
+                    else {
+                        if (txtNombre.Text == "")
+                        {
+                            MsgBox("alert", "Ingrese un nombre para el cliente");
+                        }
+                        else {
+                            if (txtApellido.Text == "")
+                            {
+                                MsgBox("alert", "Ingrese un apellido para el cliente");
+                            }
+                            else {
+                                if (txtDireccion.Text == "")
+                                {
+                                    MsgBox("alert", "Ingrese una direccion para el cliente");
+                                }
+                                else {
+                                    if (txtTelefono.Text == "")
+                                    {
+                                        MsgBox("alert", "Ingrese un telefono para el cliente");
+                                    }
+                                    else {
+                                        if (txtEmail.Text == "")
+                                        {
+                                            MsgBox("alert", "Ingrese un email para el cliente");
+                                        }
+                                        else {
+                                            MsgBox("alert", "Se ha creado el cliente");
+                                            txtCedula.Text = "";
+                                            txtNombre.Text = "";
+                                            txtApellido.Text = "";
+                                            txtTelefono.Text = "";
+                                            txtEmail.Text = "";
+                                            txtDireccion.Text = "";
+                                        }
+                                    }    
+                                }
+                            }
+                        }
+
+                    }
+                
+                }
+            }
+            catch (Exception)
+            {
+                MsgBox("alert", "Error");
+            }
+
         }
 
-        //
         protected void MsgBox(string v_tipo_msg, string v_msg)
         {
             Response.Write("<script language='javascript'>");

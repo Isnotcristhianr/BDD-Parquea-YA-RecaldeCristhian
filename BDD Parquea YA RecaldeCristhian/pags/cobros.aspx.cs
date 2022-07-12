@@ -22,7 +22,22 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
 
         protected void btnFacturar_Click(object sender, EventArgs e)
         {
-            MsgBox("alert", "Se ha facturado");
+            try
+            {
+                if (txtCedula.Text == "")
+                {
+                    MsgBox("alert", "Ingrese la cedula para poder facturar");
+                }
+                else
+                {
+                    MsgBox("alert", "Se ha facturado correctamente para: " + txtCedula.Text);
+                    txtCedula.Text = "";
+                }
+            }
+            catch (Exception)
+            {
+                MsgBox("alert", "Error");
+            }
         }
 
         protected void MsgBox(string v_tipo_msg, string v_msg)

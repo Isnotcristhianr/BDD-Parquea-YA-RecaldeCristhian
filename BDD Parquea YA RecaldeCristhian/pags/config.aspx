@@ -99,18 +99,18 @@
                 <tr>
                     <td class="auto-style12">
                         <asp:Image ID="Image6" runat="server" ImageUrl="~/imgs/clock.png" />
-                        <asp:TextBox ID="txtHorarioInicio" runat="server" CssClass="auto-style9" MaxLength="50" Width="165px" placeholder="Hora Inicio"></asp:TextBox>
+                        <asp:TextBox ID="txtHorarioInicio" runat="server" CssClass="auto-style9" MaxLength="50" Width="165px" placeholder="Hora Inicio 00:00"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style12">
                         <asp:Image ID="Image7" runat="server" ImageUrl="~/imgs/clock.png" />
-                        <asp:TextBox ID="txtHorarioFin" runat="server" CssClass="auto-style9" MaxLength="50" Width="165px" placeholder="Hora Fin"></asp:TextBox>
+                        <asp:TextBox ID="txtHorarioFin" runat="server" CssClass="auto-style9" MaxLength="50" Width="165px" placeholder="Hora Fin 00:00"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style14">
-                        <asp:Button ID="Button1" runat="server" BackColor="#004AAD" Font-Bold="True" ForeColor="White" OnClick="Button1_Click" Text="Configurar" />
+                        <asp:Button ID="btnConfigurar" runat="server" BackColor="#004AAD" Font-Bold="True" ForeColor="White" OnClick="btnConfigurar_Click" Text="Configurar" />
                     </td>
                 </tr>
                 <tr>

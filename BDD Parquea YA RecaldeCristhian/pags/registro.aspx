@@ -48,11 +48,6 @@
             margin-bottom: 0px;
         }
 
-        .auto-style25 {
-            height: 209px;
-            margin-left: 72px;
-        }
-
         .auto-style26 {
             font-size: xx-small;
         }
@@ -70,6 +65,12 @@
 
         .auto-style29 {
             text-align: center;
+        }
+
+        .auto-style30 {
+            text-align: center;
+            width: 382px;
+            height: 29px;
         }
 
         </style>
@@ -111,7 +112,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style19">
+                    <td class="auto-style30">
                         <asp:Image ID="Image3" runat="server" Height="24px" ImageUrl="~/imgs/user (4).png" Width="26px" />
                         <asp:TextBox ID="txtUser" runat="server" CssClass="auto-style9" MaxLength="50" Width="275px" placeholder="Usuario"></asp:TextBox>
                     </td>
@@ -155,17 +156,8 @@
                 <tr>
                     <td class="auto-style19">
                         <asp:Image ID="Image13" runat="server" ImageUrl="~/imgs/date.png" />
-&nbsp;Fecha<br />
-                        <div class="auto-style25">
-                            <asp:Calendar ID="cFecha" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="134px" NextPrevFormat="ShortMonth" Width="262px">
-                                <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-                                <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
-                                <OtherMonthDayStyle ForeColor="#999999" />
-                                <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                                <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-                                <TodayDayStyle BackColor="#CCCCCC" />
-                            </asp:Calendar>
-                        </div>
+                        &nbsp;<asp:TextBox ID="txtDate" runat="server" CssClass="auto-style9" MaxLength="50" Width="275px" placeholder="Fecha dd/mm/aaaa"></asp:TextBox>
+                        <br />
                     </td>
                 </tr>
                 <tr>

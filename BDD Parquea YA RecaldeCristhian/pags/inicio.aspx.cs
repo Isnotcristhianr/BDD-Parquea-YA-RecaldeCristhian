@@ -19,24 +19,33 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
 
         protected void btnIniciar_Click(object sender, EventArgs e)
         {
-            if (txtUser.Text == "" && txtPassw.Text == "")
+            try {
+                if (txtUser.Text == "" && txtPassw.Text == "")
+                {
+                    MsgBox("alert", "Ingrese los campos para poder iniciar sesion");
+                }
+                else if (txtUser.Text == "")
+                {
+                    MsgBox("alert", "Ingrese su usuario para poder iniciar sesion");
+                }
+                else if (txtPassw.Text == "")
+                {
+                    MsgBox("alert", "Ingrese su contraseña para poder iniciar sesion");
+                }
+                else
+                {
+                    MsgBox("alert", "Inicio de satisfactorio");
+                    txtUser.Text = "";
+                    txtPassw.Text = "";
+                    Response.Redirect("admin.aspx");
+                }
+            } 
+            catch (Exception)
             {
-                MsgBox("alert", "Ingrese los campos para poder iniciar sesion");
+                MsgBox("alert", "Error");
             }
-            else if (txtUser.Text == "")
-            {
-                MsgBox("alert", "Ingrese su usuario para poder iniciar sesion");
-            }
-            else if (txtPassw.Text == "")
-            {
-                MsgBox("alert", "Ingrese su contraseña para poder iniciar sesion");
-            }
-            else
-            {
-                MsgBox("alert", "Inicio de satisfactorio");
-                Response.Redirect("admin.aspx");
-            }
-        }
+
+}
 
         protected void MsgBox(string v_tipo_msg, string v_msg)
         {

@@ -141,13 +141,13 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
         protected global::System.Web.UI.WebControls.TextBox txtHorarioFin;
 
         /// <summary>
-        /// Control Button1.
+        /// Control btnConfigurar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnConfigurar;
 
         /// <summary>
         /// Control hplVolver.

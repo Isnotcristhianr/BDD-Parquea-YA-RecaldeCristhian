@@ -24,25 +24,40 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            // Response.Redirect("inicio.aspx");
-            String ide = txtId.Text;
+            try { 
+                // Response.Redirect("inicio.aspx");
+                String ide = txtId.Text;
 
-            if (ide == "" && txtPassword.Text == "" && txtConfPassword.Text == "") {
-                MsgBox("alert", "Ingrese los campo para poder actualizar");
-            } else if (ide == "")
-            {
-                MsgBox("alert", "Ingrese el campo cedula para poder actualizar");
+                if (ide == "" && txtPassword.Text == "" && txtConfPassword.Text == "")
+                {
+                    MsgBox("alert", "Ingrese los campo para poder actualizar");
+                }
+                else if (ide == "")
+                {
+                    MsgBox("alert", "Ingrese el campo cedula para poder actualizar");
+                }
+                else if (txtPassword.Text == "")
+                {
+                    MsgBox("alert", "Ingrese el campo contraseña para poder actualizar");
+                }
+                else if (txtConfPassword.Text == "")
+                {
+                    MsgBox("alert", "Ingrese el campo confirmar contraseña para poder actualizar");
+                }
+                else if (txtPassword != txtConfPassword) {
+                    MsgBox("alert", "Las contraseñas no coinciden");
+                }
+                else
+                {
+                    MsgBox("alert", "Se ha actualizado satisfactoriamente la contraseña de: " + ide);
+                    txtId.Text = "";
+                    txtPassword.Text = "";
+                    txtConfPassword.Text = "";
+                }
             }
-            else if (txtPassword.Text == "")
+            catch (Exception)
             {
-                MsgBox("alert", "Ingrese el campo contraseña para poder actualizar");
-            }
-            else if (txtConfPassword.Text == "") {
-                MsgBox("alert", "Ingrese el campo confirmar contraseña para poder actualizar");
-            }
-            else
-            {
-                MsgBox("alert", "Se ha actualizado satisfactoriamente la contraseña de: " + ide);
+                MsgBox("alert", "Error");
             }
         }
 

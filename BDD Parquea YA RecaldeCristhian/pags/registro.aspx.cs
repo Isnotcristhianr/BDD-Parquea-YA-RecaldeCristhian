@@ -19,23 +19,85 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
 
         protected void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("inicio.aspx");
-            if (cbxAcuerdo.Checked != false)
-            {
-                MsgBox("alert", "Se ha registrado Usuario");
-                txtNombre.Text = "";
-                txtApellido.Text = "";
-                txtUser.Text = "";
-                txtPassword.Text = "";
-                txtConfPassword.Text = "";
-                txtUbi.Text = "";
-                txtTelf.Text = "";
-                txtEmail.Text = "";
-                txtId.Text = "";
+            try { 
+                if (txtNombre.Text == "" && txtApellido.Text == "" && txtUser.Text == "" && txtPassword.Text == "" && txtConfPassword.Text == "" && txtUbi.Text == "" && txtTelf.Text == "" && txtEmail.Text == "" && txtId.Text == "" && txtDate.Text=="")
+                {
+                    MsgBox("alert", "Ingrese los campos para poder continuar");
+                }
+                if (txtNombre.Text == "") {
+                    MsgBox("alert", "Ingrese un nombre para poder registrar");
+                }
+                else
+                {
+                    if (txtApellido.Text == "")
+                    {
+                        MsgBox("alert", "Ingrese un apellido para poder registrar");
+                    }
+                    else {
+                        if (txtUser.Text == "") {
+                            MsgBox("alert", "Ingrese un usuario para poder registrar");
+                        }
+                        else
+                        {
+                            if (txtUbi.Text == "") {
+                                MsgBox("alert", "Ingrese una ubicacion para poder registrar");
+                            }
+                            else
+                            {
+                                if (txtTelf.Text == "")
+                                {
+                                    MsgBox("alert", "Ingrese un telefono para poder registrar");
+                                }
+                                else {
+                                    if (txtId.Text == "") {
+                                        MsgBox("alert", "Ingrese una cedula para poder registrar");
+                                    }
+                                    else
+                                    {
+                                        if (txtEmail.Text == "") {
+                                            MsgBox("alert", "Ingrese un email para poder registrar");
+                                        }
+                                        else
+                                        {
+                                            if (txtDate.Text == "")
+                                            {
+                                                MsgBox("alert", "Ingrese una fecha para poder registrar");
+                                            }
+                                            else {
+                                                if (txtPassword != txtConfPassword)
+                                                {
+                                                    MsgBox("alert", "Las contraseñas ingresadas no coinciden");
+                                                }
+                                                else if (cbxAcuerdo.Checked == true)
+                                                {
+                                                    MsgBox("alert", "Se ha registrado usuario: "+txtNombre.Text);
+                                                    txtNombre.Text = "";
+                                                    txtApellido.Text = "";
+                                                    txtUser.Text = "";
+                                                    txtPassword.Text = "";
+                                                    txtConfPassword.Text = "";
+                                                    txtUbi.Text = "";
+                                                    txtTelf.Text = "";
+                                                    txtEmail.Text = "";
+                                                    txtId.Text = "";
+                                                    Response.Redirect("inicio.aspx");
+                                                }
+                                                else
+                                                {
+                                                    MsgBox("alert", "Acepte terminos y condiciones para continuar");
+                                                }
+                                            }
+                                        }
+                                    }
+                                }                               
+                            }
+                        }
+                    }
+                }
             }
-            else {
-                MsgBox("alert", "Acepte terminos y condiciones para continuar");
-
+            catch (Exception)
+            {
+                MsgBox("alert", "Error");
             }
         }
 

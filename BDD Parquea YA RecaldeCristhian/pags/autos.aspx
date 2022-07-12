@@ -17,9 +17,6 @@
         width: 493px;
         color: #004AAD;
     }
-    .auto-style12 {
-        color: #004AAD;
-    }
     .auto-style13 {
         width: 282px;
     }
@@ -97,25 +94,18 @@
                 <tr>
                     <td class="auto-style14">
                         <asp:Image ID="Image6" runat="server" ImageUrl="~/imgs/date (1).png" />
-&nbsp;<span class="auto-style12">Fecha de Ingreso</span><asp:Calendar ID="cFecha" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="134px" NextPrevFormat="ShortMonth" Width="262px">
-                                <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-                                <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
-                                <OtherMonthDayStyle ForeColor="#999999" />
-                                <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                                <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-                                <TodayDayStyle BackColor="#CCCCCC" />
-                            </asp:Calendar>
+&nbsp;<asp:TextBox ID="txtDate" runat="server" placeholder="Fecha dd/mm/aaaa"></asp:TextBox>
                         </td>
                 </tr>
                 <tr>
                     <td class="auto-style14">
                         <asp:Image ID="Image7" runat="server" ImageUrl="~/imgs/clock.png" />
-                        <asp:TextBox ID="txtHoraIngreso" runat="server" placeholder="Hora Ingreso"></asp:TextBox>
+                        <asp:TextBox ID="txtHoraIngreso" runat="server" placeholder="Hora Ingreso 00:00"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style6">
-                        <asp:Button ID="btnRegistrar" runat="server" BackColor="#004AAD" Font-Bold="True" ForeColor="White" Text="Registrar" />
+                        <asp:Button ID="btnRegistrar" runat="server" BackColor="#004AAD" Font-Bold="True" ForeColor="White" Text="Registrar" OnClick="btnRegistrar_Click" />
                     </td>
                 </tr>
                 <tr>
