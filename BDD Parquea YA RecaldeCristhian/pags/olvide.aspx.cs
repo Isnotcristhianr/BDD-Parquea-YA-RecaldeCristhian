@@ -44,7 +44,7 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                 {
                     MsgBox("alert", "Ingrese el campo confirmar contraseña para poder actualizar");
                 }
-                else if (txtPassword != txtConfPassword) {
+                else if (txtPassword.Text != txtConfPassword.Text) {
                     MsgBox("alert", "Las contraseñas no coinciden");
                 }
                 else

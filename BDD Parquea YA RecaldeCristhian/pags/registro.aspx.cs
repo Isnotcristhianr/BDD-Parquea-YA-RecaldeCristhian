@@ -64,7 +64,7 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                                 MsgBox("alert", "Ingrese una fecha para poder registrar");
                                             }
                                             else {
-                                                if (txtPassword != txtConfPassword)
+                                                if (txtPassword.Text != txtConfPassword.Text)
                                                 {
                                                     MsgBox("alert", "Las contraseñas ingresadas no coinciden");
                                                 }

@@ -46,6 +46,14 @@
             border-top-color: #CCCCCC;
             background-color: #FFFFFF;
         }
+        .auto-style21 {
+            text-align: left;
+            height: 20px;
+        }
+        .auto-style22 {
+            font-size: small;
+            color: #072344;
+        }
     </style>
     <p style="background-color: rgb(0, 74, 173)">
         <asp:Image ID="Image1" runat="server" ImageUrl="~/imgs/ParqueaYa (1500 × 50&nbsp;px).png" Height="45px" />
@@ -61,11 +69,16 @@
         <div>
             <table class="auto-style1" style="background-color: #FFFFFF; border-radius:3%">
                 <tr>
+                    <td class="auto-style21" colspan="4" style="border-color: #CCCCCC; background-color: #FFFFFF">
+                        <asp:Label ID="lblUsuario" runat="server" CssClass="auto-style22"></asp:Label>
+                    </td>
+                    <td class="auto-style2" style="border-color: #CCCCCC; background-color: #FFFFFF" rowspan="5">
+                        <asp:Image ID="Image3" runat="server" Height="278px" ImageUrl="~/imgs/animation_500_l5fjjsp9.gif" Width="302px" />
+                    </td>
+                </tr>
+                <tr>
                     <td class="auto-style3" colspan="4" style="border-color: #CCCCCC; background-color: #FFFFFF">
                         <asp:Image ID="Image2" runat="server" Height="75px" ImageUrl="~/imgs/ParqueaYa  icon (1).png" Width="82px" />
-                    </td>
-                    <td class="auto-style2" style="border-color: #CCCCCC; background-color: #FFFFFF" rowspan="4">
-                        <asp:Image ID="Image3" runat="server" Height="278px" ImageUrl="~/imgs/animation_500_l5fjjsp9.gif" Width="302px" />
                     </td>
                 </tr>
                 <tr>

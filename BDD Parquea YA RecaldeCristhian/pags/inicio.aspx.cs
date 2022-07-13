@@ -34,6 +34,8 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                 }
                 else
                 {
+                    //sesion
+                    Session["usuario"] = txtUser.Text;
                     MsgBox("alert", "Inicio de satisfactorio");
                     txtUser.Text = "";
                     txtPassw.Text = "";

@@ -72,8 +72,8 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                         " " + "Iva: " + iva +
                                         " " + "Hora inicio: " + horaInicio +
                                         " " + "Hora fin: " + horaFin);
-
-                                    // Response.Redirect("admin.aspx");
+                                    //envio a pnl admin
+                                     Response.Redirect("admin.aspx");
                                 }
                             }
                         }

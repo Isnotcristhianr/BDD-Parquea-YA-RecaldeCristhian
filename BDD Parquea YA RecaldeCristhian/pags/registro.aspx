@@ -1,13 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registro.aspx.cs" Inherits="BDD_Parquea_YA_RecaldeCristhian.pags.registro" %>
 
-<
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Registro de Usuarios</title>
+&nbsp;<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head runat="server"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Registro de Usuarios</title>
            <link href="../imgs/ParqueaYa  icon (1).png" rel="icon" />
 
     <style type="text/css">
