@@ -47,5 +47,16 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
             Response.Write("</script>");
         }
 
+        protected void imgPrint_Click(object sender, ImageClickEventArgs e)
+        {
+
+            string popupScript = "<script language='javascript'>" +
+            "window.print('cobros.aspx', 'CustomPopUp', " +
+         "'width=850, height=350, menubar=no,scrollbars=yes, resizable=yes')" +
+        "</script>";
+
+            Page.RegisterStartupScript("PopupScript", popupScript);
+
+        }
     }
 }

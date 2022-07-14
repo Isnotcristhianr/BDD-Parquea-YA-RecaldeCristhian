@@ -159,6 +159,7 @@
     <Content Include="imgs\ParqueaYa %28500 × 250 px%29.png" />
     <Content Include="imgs\payment.png" />
     <Content Include="imgs\person.png" />
+    <Content Include="imgs\print.png" />
     <Content Include="imgs\production ID_4047768.mp4" />
     <Content Include="imgs\user %284%29.png" />
     <Content Include="pags\admin.aspx" />
@@ -233,6 +234,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="pags\Acc.cs" />
+    <Compile Include="pags\AccesoDatos.cs" />
     <Compile Include="pags\admin.aspx.cs">
       <DependentUpon>admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -275,6 +278,7 @@
     <Compile Include="pags\config.aspx.designer.cs">
       <DependentUpon>config.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pags\Encriptar.cs" />
     <Compile Include="pags\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -289,6 +293,7 @@
     <Compile Include="pags\inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pags\Log.cs" />
     <Compile Include="pags\olvide.aspx.cs">
       <DependentUpon>olvide.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

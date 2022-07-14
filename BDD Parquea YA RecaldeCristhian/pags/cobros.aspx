@@ -77,7 +77,7 @@
         height: 107px;
     }
     .auto-style20 {
-        text-align: left;
+        text-align: right;
         height: 53px;
     }
     .auto-style21 {
@@ -196,6 +196,7 @@
                 <tr>
                     <td class="auto-style20" colspan="4">
                         <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style21" ForeColor="#CCCCCC" NavigateUrl="~/pags/admin.aspx">← Volver</asp:HyperLink>
+                    &nbsp;<asp:ImageButton ID="imgPrint" runat="server" Height="23px" ImageUrl="~/imgs/print.png" OnClick="imgPrint_Click" Width="24px" />
                     </td>
                 </tr>
             </table>
