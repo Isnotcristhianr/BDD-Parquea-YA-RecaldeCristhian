@@ -17,6 +17,8 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
             }
         }
 
+       
+
         protected void btnIniciar_Click(object sender, EventArgs e)
         {
             try {
@@ -47,8 +49,8 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                 MsgBox("alert", "Error");
             }
 
-}
-
+        }
+ 
         protected void MsgBox(string v_tipo_msg, string v_msg)
         {
             Response.Write("<script language='javascript'>");

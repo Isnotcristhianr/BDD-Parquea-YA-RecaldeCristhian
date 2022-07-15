@@ -7,7 +7,7 @@ using System.Configuration;
 using MySql.Data.MySqlClient;
 
 
-namespace WebApplication9
+namespace BDD_Parquea_YA_RecaldeCristhian
 {
     public class AccesoDatos
     {

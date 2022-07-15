@@ -172,6 +172,7 @@
     <Content Include="pags\inicio.aspx" />
     <Content Include="pags\olvide.aspx" />
     <Content Include="pags\registro.aspx" />
+    <Content Include="pags\test.aspx" />
     <Content Include="pags\Welcome.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -307,6 +308,13 @@
     </Compile>
     <Compile Include="pags\registro.aspx.designer.cs">
       <DependentUpon>registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pags\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pags\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="pags\Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>

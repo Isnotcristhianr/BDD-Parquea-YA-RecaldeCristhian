@@ -6,15 +6,15 @@ using System.Data.Common;
 using System.Configuration;
 using MySql.Data.MySqlClient;
 
-namespace WebApplication9
+namespace BDD_Parquea_YA_RecaldeCristhian
 {
     public class Acc
     {
-        AccesoDatos conectar = new AccesoDatos("OVALOS");
+        AccesoDatos conectar = new AccesoDatos("ParqueaYA");
         public DataSet Usuario()
         {
             conectar.Conectar();
-            conectar.CrearComando("SP_SELECT_CLIENTE");
+            conectar.CrearComando("SP_SELECT_CLI");
             //conectar.AsignarParametros("USUARIO", strUsuario, DbType.String);
             //conectar.AsignarParametros("CLAVE", strClave, DbType.String);
             DataSet dsDatos = conectar.EjecutarDataset();

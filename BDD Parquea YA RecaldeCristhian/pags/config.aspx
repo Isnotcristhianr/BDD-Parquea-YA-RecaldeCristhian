@@ -48,7 +48,12 @@
         }
 
         .auto-style18 {
-            height: 109px;
+            height: 61px;
+        }
+
+        .auto-style19 {
+            text-align: center;
+            margin-left: 286px;
         }
 
         </style>
@@ -121,6 +126,29 @@
             </table>
         </div>
         <div class="auto-style18"></div>
+        <div class="auto-style19">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="config_id" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Horizontal">
+                <Columns>
+                    <asp:CommandField ShowSelectButton="True" />
+                    <asp:BoundField DataField="config_id" HeaderText="config_id" InsertVisible="False" ReadOnly="True" SortExpression="config_id" />
+                    <asp:BoundField DataField="config_disponibles" HeaderText="config_disponibles" SortExpression="config_disponibles" />
+                    <asp:BoundField DataField="config_pvp" HeaderText="config_pvp" SortExpression="config_pvp" />
+                    <asp:BoundField DataField="config_iva" HeaderText="config_iva" SortExpression="config_iva" />
+                    <asp:BoundField DataField="config_inicio" HeaderText="config_inicio" SortExpression="config_inicio" />
+                    <asp:BoundField DataField="config_fin" HeaderText="config_fin" SortExpression="config_fin" />
+                    <asp:BoundField DataField="config_estado" HeaderText="config_estado" SortExpression="config_estado" />
+                </Columns>
+                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                <SortedDescendingHeaderStyle BackColor="#242121" />
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:bddparqueayaConnectionString4 %>" ProviderName="<%$ ConnectionStrings:bddparqueayaConnectionString4.ProviderName %>" SelectCommand="SELECT tbl_config.* FROM tbl_config INNER JOIN tbl_config tbl_config_1 ON tbl_config.config_id = tbl_config_1.config_id"></asp:SqlDataSource>
+        </div>
     </form>
 </body>
 <footer>
