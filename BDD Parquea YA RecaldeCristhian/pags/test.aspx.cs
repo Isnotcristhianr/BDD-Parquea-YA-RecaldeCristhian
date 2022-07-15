@@ -24,6 +24,8 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Label1.Text = GridView1.SelectedRow.Cells[3].Text;
+            Label2.Text = GridView1.SelectedRow.Cells[2].Text;
 
         }
 
@@ -35,6 +37,13 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
             GridView1.DataSource = dsDatos.Tables[0];
             GridView1.DataBind();
 
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            
+            DataSet dsDatos = datos.InsertarP(TextBox1.Text, int.Parse(TextBox2.Text), int.Parse(TextBox3.Text));
+            
         }
     }
 }
