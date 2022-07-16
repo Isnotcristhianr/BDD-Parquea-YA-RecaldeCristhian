@@ -50,7 +50,11 @@
     }
     .auto-style18 {
         height: 70px;
+        margin-left: 598px;
         margin-top: 42px;
+    }
+    .auto-style19 {
+        margin-left: 545px;
     }
 </style>
 
@@ -127,13 +131,16 @@
                 </tr>
             </table>
             <div class="auto-style18">
-                <asp:Button ID="btnVer" runat="server" OnClick="btnVer_Click" Text="Visualizar Clientes" />
-                <asp:Button ID="btnActualizar" runat="server" OnClick="btnActualizar_Click" Text="Actualizar" />
+                <asp:Button ID="btnVer" runat="server" BackColor="#006699" BorderStyle="Ridge" Font-Bold="True" ForeColor="White" OnClick="btnVer_Click" Text="Visualizar Clientes" />
+&nbsp;&nbsp;
+                <asp:Button ID="btnActualizar" runat="server" BackColor="#00CC99" Font-Bold="True" ForeColor="White" OnClick="btnActualizar_Click" Text="Actualizar" />
+&nbsp;&nbsp;
+                <asp:Button ID="btnEliminar" runat="server" BackColor="#CC0000" Font-Bold="True" ForeColor="White" OnClick="btnEliminar_Click" Text="Eliminar" />
             </div>
         </div>
         <div class="auto-style10">
             <div class="auto-style17">
-                <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" CssClass="auto-style19" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True"></asp:CommandField>
                     </Columns>

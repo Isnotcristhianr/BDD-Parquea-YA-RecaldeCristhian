@@ -72,7 +72,7 @@ namespace BDD_Parquea_YA_RecaldeCristhian
             return dsDatos;
         }
 
-        public DataSet actualizarClientes(string ced, string nombre, string apellido, string dir, string telf, string email, int est)
+        public DataSet actualizarClientes(string ced, string nombre, string apellido, string dir, string telf, string email, int est, int id)
         {
             conectar.Conectar();
             conectar.CrearComando("SP_UPDATE_CLI");
@@ -83,6 +83,18 @@ namespace BDD_Parquea_YA_RecaldeCristhian
             conectar.AsignarParametros("telf", telf, DbType.String);
             conectar.AsignarParametros("email", email, DbType.String);
             conectar.AsignarParametros("est", est.ToString(), DbType.Int32);
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet elminarClientes(int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_DELETE_CLI");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
 
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();

@@ -28,7 +28,7 @@
             <br />
             estado:<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
             <br />
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" style="height: 29px" />
         </div>
     </form>
 </body>

@@ -24,8 +24,8 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                 if (!Page.IsPostBack)
                 {
 
-                }
-            }
+                 }
+        }
 
         protected void btnCrear_Click(object sender, EventArgs e)
         {
@@ -66,10 +66,10 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                         }
                                         else {
                                             //insertar
-                                            DataSet dsDatos = datos.insertarClientes(txtCedula.Text, txtNombre.Text, txtApellido.Text,txtDireccion.Text, txtTelefono.Text,txtDireccion.Text,1);
+                                            DataSet dsDatos = datos.insertarClientes(txtCedula.Text, txtNombre.Text, txtApellido.Text,txtDireccion.Text, txtTelefono.Text,txtEmail.Text,1);
 
                                             //ver actualizado
-                                            dsDatos = datos.Usuario();
+                                            dsDatos = datos.selectClientes();
                                             GridView1.DataSource = dsDatos.Tables[0];
                                             GridView1.DataBind();
 
@@ -99,26 +99,27 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
 
         protected void btnVer_Click(object sender, EventArgs e)
         {
-            DataSet dsDatos = datos.Usuario();
+            DataSet dsDatos = datos.selectClientes();
             GridView1.DataSource = dsDatos.Tables[0];
             GridView1.DataBind();
         }
 
-        int tmp = 0;
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (tmp==1)
-                {
-                   // btnCrear.Enabled=false;
 
-                }
-                else
-                {
-                    MsgBox("alert", "Selesccione una fila para actualizar");
+                    btnCrear.Enabled = true;
+                    //actualizar
+                    int id = int.Parse(GridView1.SelectedRow.Cells[1].Text);    //id
 
-                }
+                    DataSet dsDatos = datos.actualizarClientes(txtCedula.Text, txtNombre.Text, txtApellido.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text, 1, id);
+
+                    //ver actualizado
+                    dsDatos = datos.selectClientes();
+                    GridView1.DataSource = dsDatos.Tables[0];
+                    GridView1.DataBind();
+
             }
             catch (Exception) 
             {
@@ -138,13 +139,14 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
         {
             try
             {
-                tmp = 1;
-                txtCedula.Text = GridView1.SelectedRow.Cells[0].Text;
-                txtNombre.Text = GridView1.SelectedRow.Cells[1].Text;
-                txtApellido.Text = GridView1.SelectedRow.Cells[2].Text;
-                txtTelefono.Text = GridView1.SelectedRow.Cells[2].Text;
-                txtDireccion.Text = GridView1.SelectedRow.Cells[2].Text;
-                txtEmail.Text = GridView1.SelectedRow.Cells[2].Text;
+                btnCrear.Enabled = false;
+
+                txtCedula.Text = GridView1.SelectedRow.Cells[2].Text;
+                txtNombre.Text = GridView1.SelectedRow.Cells[3].Text;
+                txtApellido.Text = GridView1.SelectedRow.Cells[4].Text;
+                txtTelefono.Text = GridView1.SelectedRow.Cells[5].Text;
+                txtDireccion.Text = GridView1.SelectedRow.Cells[6].Text;
+                txtEmail.Text = GridView1.SelectedRow.Cells[7].Text;
 
 
             }
@@ -153,6 +155,30 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
 
             }
 
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //eliminar
+                int id = int.Parse(GridView1.SelectedRow.Cells[1].Text);    //id
+
+                DataSet dsDatos = datos.elminarClientes( id);
+                MsgBox("alert", "Se ha elminado el registro: "+id);
+
+                //ver actualizado
+                dsDatos = datos.selectClientes();
+                GridView1.DataSource = dsDatos.Tables[0];
+                GridView1.DataBind();
+
+
+            }
+            catch (Exception)
+            {
+                MsgBox("alert", "Error");
+            }
         }
     }
 }
