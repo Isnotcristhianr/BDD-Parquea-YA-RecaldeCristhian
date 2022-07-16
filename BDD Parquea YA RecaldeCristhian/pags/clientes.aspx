@@ -54,7 +54,7 @@
         margin-top: 42px;
     }
     .auto-style19 {
-        margin-left: 545px;
+        margin-left: 457px;
     }
 </style>
 

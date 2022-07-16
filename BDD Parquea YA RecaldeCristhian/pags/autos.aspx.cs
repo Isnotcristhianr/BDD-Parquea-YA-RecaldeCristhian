@@ -4,11 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//usings
+using System.Text;
+using System.Data;
+using System.Data.Common;
+using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace BDD_Parquea_YA_RecaldeCristhian.pags
 {
     public partial class autos : System.Web.UI.Page
     {
+        Acc datos = new Acc();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -24,7 +32,7 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
         {
             try
             {
-                if (txtCedula.Text == "" && txtMatricula.Text == "" && ddlTipoAutomovil.Text == "Tipo de Automovil" && txtHoraIngreso.Text == "")
+                if (txtCedula.Text == "" && txtMatricula.Text == "" && txtTipo.Text == "" && txtHoraIngreso.Text == "")
                 {
                     MsgBox("alert", "Ingrese los datos para crear el ingreso de automovil");
                 }
@@ -36,9 +44,9 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                     }
                     else
                     {
-                        if (ddlTipoAutomovil.Text == "Tipo de Automovil")
+                        if (txtTipo.Text == "")
                         {
-                            MsgBox("alert", "Seleccione el tipo de automovil");
+                            MsgBox("alert", "Ingrese el tipo de automovil");
                         }
                         else
                         {
@@ -54,12 +62,23 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                 }
                                 else
                                 {
-                                    MsgBox("alert", "Se ha ingresado el automovil Matricula: " + txtMatricula.Text + " Fecha: " + txtDate.Text + " Hora:" + txtHoraIngreso.Text);
+                                    //insert
+                                    DataSet dsDatos = datos.insertarAutoss(txtCedula.Text, txtMatricula.Text, txtTipo.Text, txtDate.Text, txtHoraIngreso.Text, 1);
+
+                                    //ver actualizado
+                                    dsDatos = datos.selectAutos();
+                                    GridView1.DataSource = dsDatos.Tables[0];
+                                    GridView1.DataBind();
+
+                                    MsgBox("alert", "Se ha insertado el auto");
+
+
+                                    MsgBox("alert", "Se ha ingresado el automovil Matricula: " + txtMatricula.Text);
                                     txtCedula.Text = "";
                                     txtDate.Text = "";
                                     txtHoraIngreso.Text = "";
                                     txtMatricula.Text = "";
-                                    ddlTipoAutomovil.SelectedValue = "Tipo de Automovil";
+                                    txtTipo.Text = "";
                                 }
                             }
                         }
@@ -76,6 +95,90 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
             Response.Write("<script language='javascript'>");
             Response.Write(v_tipo_msg + "('" + v_msg + "')");
             Response.Write("</script>");
+        }
+
+        protected void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataSet dsDatos = datos.selectAutos();
+                GridView1.DataSource = dsDatos.Tables[0];
+                GridView1.DataBind();
+            }
+            catch (Exception) {
+                MsgBox("alert", "Error");
+            }
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                btnRegistrar.Enabled = true;
+
+                //actualizar
+                int id = int.Parse(GridView1.SelectedRow.Cells[1].Text);    //id
+
+                DataSet dsDatos = datos.actualizarAutos(txtCedula.Text, txtMatricula.Text, txtTipo.Text, txtDate.Text, txtHoraIngreso.Text, 1, id);
+
+                //ver actualizado
+                dsDatos = datos.selectAutos();
+                GridView1.DataSource = dsDatos.Tables[0];
+                GridView1.DataBind();
+
+                MsgBox("alert", "Se ha actualizado el registro: " + id);
+
+            }
+            catch (Exception)
+            {
+                MsgBox("alert", "Error");
+
+            }
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                btnRegistrar.Enabled = false;
+
+                txtCedula.Text = GridView1.SelectedRow.Cells[2].Text;
+                txtMatricula.Text = GridView1.SelectedRow.Cells[3].Text;
+                txtTipo.Text = GridView1.SelectedRow.Cells[4].Text;
+                txtDate.Text = GridView1.SelectedRow.Cells[5].Text;
+                txtHoraIngreso.Text = GridView1.SelectedRow.Cells[6].Text;
+
+
+            }
+            catch (Exception)
+            {
+                MsgBox("alert", "Error");
+
+            }
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //eliminar
+                int id = int.Parse(GridView1.SelectedRow.Cells[1].Text);    //id
+
+                DataSet dsDatos = datos.elminarAutos(id);
+                MsgBox("alert", "Se ha elminado el registro: " + id);
+
+                //ver actualizado
+                dsDatos = datos.selectAutos();
+                GridView1.DataSource = dsDatos.Tables[0];
+                GridView1.DataBind();
+
+
+            }
+            catch (Exception)
+            {
+                MsgBox("alert", "Error");
+            }
         }
     }
 }

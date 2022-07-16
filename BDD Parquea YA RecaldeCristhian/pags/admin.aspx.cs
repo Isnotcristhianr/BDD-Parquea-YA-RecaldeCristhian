@@ -13,7 +13,7 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
         {
             if (!Page.IsPostBack)
             {
-                //lblUsuario.Text ="Bienvenido: "+ Session["usuario"].ToString();
+                lblUsuario.Text ="Bienvenido: "+ Session["usuario"].ToString();
             }
         }
 

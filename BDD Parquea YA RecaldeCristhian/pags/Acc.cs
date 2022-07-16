@@ -100,5 +100,59 @@ namespace BDD_Parquea_YA_RecaldeCristhian
             conectar.Desconectar();
             return dsDatos;
         }
+
+        ////autos
+        public DataSet selectAutos()
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_AUTOS");
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet insertarAutoss(string ced, string matr, string tipo, string fecha, string tiempo, int est)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_INSERT_AUTOS");
+            conectar.AsignarParametros("ced", ced, DbType.String);
+            conectar.AsignarParametros("matr", matr, DbType.String);
+            conectar.AsignarParametros("tipo", tipo, DbType.String);
+            conectar.AsignarParametros("fecha", fecha, DbType.String);
+            conectar.AsignarParametros("tiempo", tiempo, DbType.String);
+            conectar.AsignarParametros("est", est.ToString(), DbType.Int32);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet actualizarAutos(string ced, string matr, string tipo, string fecha, string tiempo, int est, int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_UPDATE_AUTOS");
+            conectar.AsignarParametros("ced", ced, DbType.String);
+            conectar.AsignarParametros("matr", matr, DbType.String);
+            conectar.AsignarParametros("tipo", tipo, DbType.String);
+            conectar.AsignarParametros("fecha", fecha, DbType.String);
+            conectar.AsignarParametros("tiempo", tiempo, DbType.String);
+            conectar.AsignarParametros("est", est.ToString(), DbType.Int32);
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet elminarAutos(int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_DELETE_AUTOS");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
     }
 }
