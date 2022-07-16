@@ -23,8 +23,8 @@
     }
     .auto-style10 {
         height: 270px;
-        margin-left: 457px;
-        margin-top: 101px;
+        margin-left: 0px;
+        margin-top: 0px;
     }
     .auto-style11 {
         height: 123px;
@@ -45,11 +45,12 @@
         font-size: xx-small;
         text-align: center;
     }
-    .auto-style16 {
-        margin-left: 0px;
-    }
     .auto-style17 {
         text-align: center;
+    }
+    .auto-style18 {
+        height: 70px;
+        margin-top: 42px;
     }
 </style>
 
@@ -125,43 +126,34 @@
                     </td>
                 </tr>
             </table>
-            <div>
-                <asp:GridView ID="GridView2" runat="server">
-                </asp:GridView>
+            <div class="auto-style18">
+                <asp:Button ID="btnVer" runat="server" OnClick="btnVer_Click" Text="Visualizar Clientes" />
+                <asp:Button ID="btnActualizar" runat="server" OnClick="btnActualizar_Click" Text="Actualizar" />
             </div>
         </div>
         <div class="auto-style10">
             <div class="auto-style17">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" CssClass="auto-style16" DataKeyNames="cli_id" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Horizontal">
-                <Columns>
-                    <asp:CommandField ShowSelectButton="True" />
-                    <asp:BoundField DataField="cli_id" HeaderText="cli_id" InsertVisible="False" ReadOnly="True" SortExpression="cli_id" />
-                    <asp:BoundField DataField="cli_ced" HeaderText="cli_ced" SortExpression="cli_ced" />
-                    <asp:BoundField DataField="cli_nombre" HeaderText="cli_nombre" SortExpression="cli_nombre" />
-                    <asp:BoundField DataField="cli_apellido" HeaderText="cli_apellido" SortExpression="cli_apellido" />
-                    <asp:BoundField DataField="cli_dir" HeaderText="cli_dir" SortExpression="cli_dir" />
-                    <asp:BoundField DataField="cli_telf" HeaderText="cli_telf" SortExpression="cli_telf" />
-                    <asp:BoundField DataField="cli_email" HeaderText="cli_email" SortExpression="cli_email" />
-                    <asp:BoundField DataField="cli_estado" HeaderText="cli_estado" SortExpression="cli_estado" />
-                </Columns>
-                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                <SortedDescendingHeaderStyle BackColor="#242121" />
-            </asp:GridView>
+                <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                    <Columns>
+                        <asp:CommandField ShowSelectButton="True"></asp:CommandField>
+                    </Columns>
+                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#242121" />
+                </asp:GridView>
             </div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:bddparqueayaConnectionString2 %>" ProviderName="<%$ ConnectionStrings:bddparqueayaConnectionString2.ProviderName %>" SelectCommand="SELECT tbl_clientes.* FROM tbl_clientes"></asp:SqlDataSource>
         </div>
     </form>
 </body>
 <footer>
     
         <div class="auto-style15" style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bold; font-style: normal; text-transform: none; color: #FFFFFF; background-color: #000000">
-            <small>&copy; 2022 <b>IsnotCrsthianr</b> - Todos los Derechos Reservados - Cristhian Recalde</small>
+            <small>&copy; 2022 </b> - Todos los Derechos Reservados - Cristhian Recalde</small>
         </div>
 
 </footer>

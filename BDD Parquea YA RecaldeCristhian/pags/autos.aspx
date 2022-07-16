@@ -40,12 +40,9 @@
         text-align: center;
     }
     .auto-style20 {
-        margin-left: 396px;
+        margin-left: 0px;
     }
-    .auto-style21 {
-        text-align: center;
-    }
-</style>
+    </style>
 
 <p style="background-color: rgb(0, 74, 173)">
     <asp:Image ID="Image1" runat="server" ImageUrl="~/imgs/ParqueaYa (1500 × 50&nbsp;px).png" Height="45px" />
@@ -123,28 +120,6 @@
         </div>
         <div class="auto-style17"></div>
         <div class="auto-style20">
-            <div class="auto-style21">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="auto_id" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Horizontal">
-                <Columns>
-                    <asp:CommandField ShowSelectButton="True" />
-                    <asp:BoundField DataField="auto_id" HeaderText="auto_id" InsertVisible="False" ReadOnly="True" SortExpression="auto_id" />
-                    <asp:BoundField DataField="auto_cedula" HeaderText="auto_cedula" SortExpression="auto_cedula" />
-                    <asp:BoundField DataField="auto_matricula" HeaderText="auto_matricula" SortExpression="auto_matricula" />
-                    <asp:BoundField DataField="auto_tipo" HeaderText="auto_tipo" SortExpression="auto_tipo" />
-                    <asp:BoundField DataField="auto_ingreso" HeaderText="auto_ingreso" SortExpression="auto_ingreso" />
-                    <asp:BoundField DataField="auto_estado" HeaderText="auto_estado" SortExpression="auto_estado" />
-                </Columns>
-                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                <SortedDescendingHeaderStyle BackColor="#242121" />
-            </asp:GridView>
-            </div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:bddparqueayaConnectionString3 %>" ProviderName="<%$ ConnectionStrings:bddparqueayaConnectionString3.ProviderName %>" SelectCommand="SELECT auto_id, auto_cedula, auto_matricula, auto_tipo, auto_ingreso, auto_estado FROM tbl_autos"></asp:SqlDataSource>
         </div>
         <div class="auto-style18"></div>
     </form>
