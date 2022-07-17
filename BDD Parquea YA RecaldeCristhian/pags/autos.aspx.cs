@@ -63,7 +63,7 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                 else
                                 {
                                     //insert
-                                    DataSet dsDatos = datos.insertarAutoss(txtCedula.Text, txtMatricula.Text, txtTipo.Text, txtDate.Text, txtHoraIngreso.Text, 1);
+                                    DataSet dsDatos = datos.insertarAutos(txtCedula.Text, txtMatricula.Text, txtTipo.Text, txtDate.Text, txtHoraIngreso.Text, 1);
 
                                     //ver actualizado
                                     dsDatos = datos.selectAutos();

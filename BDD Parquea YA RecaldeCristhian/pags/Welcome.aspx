@@ -6,9 +6,9 @@
 
 <head runat="server">
     <link href="../imgs/ParqueaYa  icon (1).png" rel="icon" />
-    <p style="background-color: rgb(0, 74, 173)">
+    <div style="background-color: rgb(0, 74, 173)">
         <asp:Image ID="Image1" runat="server" ImageUrl="~/imgs/ParqueaYa (1500 × 50&nbsp;px).png" Height="45px" />
-    </p>
+    </div>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Parquea Ya</title>
     <style type="text/css">

@@ -4,11 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//usings
+using System.Text;
+using System.Data;
+using System.Data.Common;
+using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace BDD_Parquea_YA_RecaldeCristhian.pags
 {
     public partial class registro : System.Web.UI.Page
     {
+        Acc datos = new Acc();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -70,7 +78,10 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                                 }
                                                 else if (cbxAcuerdo.Checked == true)
                                                 {
-                                                    MsgBox("alert", "Se ha registrado usuario: "+txtNombre.Text);
+                                                    //insert
+                                                    DataSet dsDatos = datos.insertarUsuario(txtNombre.Text, txtApellido.Text, txtUser.Text, txtPassword.Text,txtUbi.Text, txtTelf.Text, txtId.Text, txtEmail.Text, txtDate.Text, 1);
+
+                                                    MsgBox("alert", "Se ha registrado usuario: "+ txtNombre.Text);
                                                     txtNombre.Text = "";
                                                     txtApellido.Text = "";
                                                     txtUser.Text = "";

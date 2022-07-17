@@ -4,11 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//usings
+using System.Text;
+using System.Data;
+using System.Data.Common;
+using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace BDD_Parquea_YA_RecaldeCristhian.pags
 {
     public partial class config : System.Web.UI.Page
     {
+
+        Acc datos = new Acc();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -60,7 +69,15 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                 }
                                 else
                                 {
-                                    txtDisponibles.Text = "";
+                                    //insert
+                                    DataSet dsDatos = datos.insertarConfiguraciones(int.Parse(txtDisponibles.Text), double.Parse(txtMoney.Text), int.Parse(txtIva.Text),txtHorarioInicio.Text, txtHorarioFin.Text, 1);
+
+                                //ver actualizado
+                                dsDatos = datos.selectConfiguraciones();
+                                GridView1.DataSource = dsDatos.Tables[0];
+                                GridView1.DataBind();
+
+                                txtDisponibles.Text = "";
                                     txtMoney.Text = "";
                                     txtIva.Text = "";
                                     txtHorarioInicio.Text = "";
@@ -72,8 +89,7 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                         " " + "Iva: " + iva +
                                         " " + "Hora inicio: " + horaInicio +
                                         " " + "Hora fin: " + horaFin);
-                                    //envio a pnl admin
-                                     Response.Redirect("admin.aspx");
+                                    
                                 }
                             }
                         }
@@ -92,6 +108,83 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
             Response.Write("<script language='javascript'>");
             Response.Write(v_tipo_msg + "('" + v_msg + "')");
             Response.Write("</script>");
+        }
+
+        protected void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            try {
+                DataSet dsDatos = datos.selectConfiguraciones();
+                GridView1.DataSource = dsDatos.Tables[0];
+                GridView1.DataBind();
+            }
+            catch (Exception)
+            {
+                MsgBox("alert", "Error");
+            }
+           
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                btnConfigurar.Enabled = true;
+
+                //actualizar
+                int id = int.Parse(GridView1.SelectedRow.Cells[1].Text);    //id
+
+                DataSet dsDatos = datos.actualizarConfiguraciones(int.Parse(txtDisponibles.Text), double.Parse(txtMoney.Text), int.Parse(txtIva.Text), txtHorarioInicio.Text, txtHorarioFin.Text, 1, id);
+
+                //ver actualizado
+                dsDatos = datos.selectConfiguraciones();
+                GridView1.DataSource = dsDatos.Tables[0];
+                GridView1.DataBind();
+
+                MsgBox("alert", "Se ha actualizado el registro: " + id);
+            }
+            catch (Exception) {
+                MsgBox("alert", "Error");
+            }
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                btnConfigurar.Enabled = false;
+
+                txtDisponibles.Text = GridView1.SelectedRow.Cells[2].Text;
+                txtMoney.Text = GridView1.SelectedRow.Cells[3].Text;
+                txtIva.Text = GridView1.SelectedRow.Cells[4].Text;
+                txtHorarioInicio.Text = GridView1.SelectedRow.Cells[5].Text;
+                txtHorarioFin.Text = GridView1.SelectedRow.Cells[6].Text;
+
+
+            }
+            catch (Exception)
+            {
+                MsgBox("alert", "Error");
+            }
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //eliminar
+                int id = int.Parse(GridView1.SelectedRow.Cells[1].Text);    //id
+
+                DataSet dsDatos = datos.elminarConfiguraciones(id);
+                MsgBox("alert", "Se ha elminado el registro: " + id);
+
+                //ver actualizado
+                dsDatos = datos.selectConfiguraciones();
+                GridView1.DataSource = dsDatos.Tables[0];
+                GridView1.DataBind();
+            }
+            catch (Exception) {
+                MsgBox("alert", "Error");
+            }
         }
     }
 }

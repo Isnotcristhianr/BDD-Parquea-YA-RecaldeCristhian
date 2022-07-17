@@ -4,11 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//usings
+using System.Text;
+using System.Data;
+using System.Data.Common;
+using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace BDD_Parquea_YA_RecaldeCristhian.pags
 {
     public partial class inicio : System.Web.UI.Page
     {
+        Acc datos = new Acc();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -36,12 +44,20 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                 }
                 else
                 {
-                    //sesion
-                    Session["usuario"] = txtUser.Text;
-                    MsgBox("alert", "Inicio de satisfactorio");
-                    txtUser.Text = "";
-                    txtPassw.Text = "";
-                    Response.Redirect("admin.aspx");
+                    //validacion
+                    DataSet dsDatos = datos.VerificarU(txtUser.Text, txtPassw.Text);
+                    if (dsDatos.Tables[0].Rows.Count > 0)
+                    {
+                        Session["usuario"] = txtUser.Text;
+                        MsgBox("alert", "Inicio de satisfactorio");
+                        txtUser.Text = "";
+                        txtPassw.Text = "";
+                        Response.Redirect("admin.aspx");
+                    }
+                    else
+                    {
+                        MsgBox("alert", "Usuario no registrado");
+                    }                 
                 }
             } 
             catch (Exception)

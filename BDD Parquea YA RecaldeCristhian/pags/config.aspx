@@ -48,12 +48,19 @@
         }
 
         .auto-style18 {
-            height: 61px;
+            height: 29px;
+            margin-left: 538px;
+            margin-top: 15px;
         }
 
         .auto-style19 {
             text-align: center;
-            margin-left: 0px;
+            margin-left: 349px;
+        }
+
+        .auto-style20 {
+            width: 274px;
+            height: 35px;
         }
 
         </style>
@@ -102,7 +109,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style12">
+                    <td class="auto-style20">
                         <asp:Image ID="Image6" runat="server" ImageUrl="~/imgs/clock.png" />
                         <asp:TextBox ID="txtHorarioInicio" runat="server" CssClass="auto-style9" MaxLength="50" Width="165px" placeholder="Hora Inicio 00:00"></asp:TextBox>
                     </td>
@@ -125,8 +132,27 @@
                 </tr>
             </table>
         </div>
-        <div class="auto-style18"></div>
+        <div class="auto-style18">
+            <asp:Button ID="btnVisualizar" runat="server" OnClick="btnVisualizar_Click" Text="Visualizar" BackColor="#006699" Font-Bold="True" ForeColor="White" />
+        &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnActualizar" runat="server" BackColor="#00CC99" Font-Bold="True" ForeColor="White" OnClick="btnActualizar_Click" Text="Actualizar" />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnEliminar" runat="server" BackColor="#CC0000" Font-Bold="True" ForeColor="White" OnClick="btnEliminar_Click" Text="Eliminar" />
+        </div>
         <div class="auto-style19">
+            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                <Columns>
+                    <asp:CommandField ShowSelectButton="True" />
+                </Columns>
+                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                <SortedDescendingHeaderStyle BackColor="#242121" />
+            </asp:GridView>
         </div>
     </form>
 </body>
