@@ -88,7 +88,7 @@
                 <tr>
                     <td class="auto-style28">
                         <asp:Image ID="Image11" runat="server" ImageUrl="~/imgs/identification-card.png" />
-                        <asp:TextBox ID="txtId" runat="server" CssClass="auto-style9" MaxLength="50" Width="252px" placeholder="Cedula"></asp:TextBox>
+                        <asp:TextBox ID="txtId" runat="server" CssClass="auto-style9" MaxLength="50" Width="252px" placeholder="Codigo de recuperacion"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

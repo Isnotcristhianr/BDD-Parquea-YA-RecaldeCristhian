@@ -4,11 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//usings
+using System.Text;
+using System.Data;
+using System.Data.Common;
+using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace BDD_Parquea_YA_RecaldeCristhian.pags
 {
     public partial class olvide : System.Web.UI.Page
     {
+        Acc datos = new Acc();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -49,10 +57,21 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                 }
                 else
                 {
+
+                    //actualizar
+                    DataSet dsDatos = datos.actualizarContrasenia(int.Parse(txtId.Text), txtPassword.Text);
+                    DataSet dsDatos2 = datos.obteneridLastUsuario();
+                    String msg = dsDatos2.Tables[0].Rows[0]["reg_id"].ToString();
+
+                    txtId.Text = "";
+                    txtPassword.Text = "";
+                    txtConfPassword.Text = "";
+                    //Response.Redirect("inicio.aspx");
                     MsgBox("alert", "Se ha actualizado satisfactoriamente la contraseña de: " + ide);
                     txtId.Text = "";
                     txtPassword.Text = "";
                     txtConfPassword.Text = "";
+                    Response.Redirect("inicio.aspx");
                 }
             }
             catch (Exception)

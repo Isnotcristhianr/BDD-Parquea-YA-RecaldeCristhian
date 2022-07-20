@@ -186,5 +186,36 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                 MsgBox("alert", "Error");
             }
         }
+
+        protected void btnEstado_Click(object sender, EventArgs e)
+        {
+            btnConfigurar.Enabled = true;
+
+            int id = int.Parse(GridView1.SelectedRow.Cells[1].Text);    //id
+
+            //estado
+
+            DataSet dsDatos = datos.elminarEstadoConfiguraciones(0, id);
+            MsgBox("alert", "Se ha elminado el estado del registro: " + id);
+
+            //ver actualizado
+            dsDatos = datos.selectConfiguraciones();
+            GridView1.DataSource = dsDatos.Tables[0];
+            GridView1.DataBind();
+        }
+
+        protected void imgPrint_Click(object sender, ImageClickEventArgs e)
+        {
+            DataSet dsDatos = datos.selectConfiguraciones();
+            GridView1.DataSource = dsDatos.Tables[0];
+            GridView1.DataBind();
+
+            string popupScript = "<script language='javascript'>" +
+            "window.print('cobros.aspx', 'CustomPopUp', " +
+         "'width=850, height=350, menubar=no,scrollbars=yes, resizable=yes')" +
+        "</script>";
+
+            Page.RegisterStartupScript("PopupScript", popupScript);
+        }
     }
 }

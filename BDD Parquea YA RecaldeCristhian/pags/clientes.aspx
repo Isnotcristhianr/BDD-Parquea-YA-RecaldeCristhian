@@ -8,51 +8,64 @@
         width: 632px;
         margin-left: 489px;
     }
+
     .auto-style5 {
         width: 386px;
     }
+
     .auto-style6 {
         width: 632px;
     }
+
     .auto-style7 {
         margin-left: 1px;
     }
+
     .auto-style8 {
         width: 386px;
         text-align: center;
     }
+
     .auto-style10 {
         height: 270px;
         margin-left: 0px;
         margin-top: 0px;
     }
+
     .auto-style11 {
         height: 123px;
     }
+
     .auto-style12 {
         font-size: xx-small;
     }
+
     .auto-style13 {
         width: 386px;
         text-align: left;
     }
+
     .auto-style14 {
         width: 386px;
         text-align: center;
         color: #004AAD;
     }
+
     .auto-style15 {
         font-size: xx-small;
         text-align: center;
     }
+
     .auto-style17 {
         text-align: center;
     }
+
     .auto-style18 {
         height: 70px;
-        margin-left: 598px;
+        margin-left: 515px;
         margin-top: 42px;
     }
+
     .auto-style19 {
         margin-left: 457px;
     }
@@ -71,12 +84,12 @@
     <form id="form1" runat="server">
         <div class="auto-style11"></div>
         <div>
-            <table class="auto-style2" style="background-color: #FFFFFF; border-radius:3%">
+            <table class="auto-style2" style="background-color: #FFFFFF; border-radius: 3%">
                 <tr>
                     <td class="auto-style8">
                         <asp:Image ID="Image8" runat="server" Height="61px" ImageUrl="~/imgs/ParqueaYa  icon (1).png" Width="71px" />
                     </td>
-                    <td class="auto-style6" rowspan="10">
+                    <td class="auto-style6" rowspan="11">
                         <asp:Image ID="Image9" runat="server" CssClass="auto-style7" Height="349px" ImageUrl="~/imgs/animation_500_l5fkmozk.gif" Width="385px" />
                     </td>
                 </tr>
@@ -85,37 +98,37 @@
                 </tr>
                 <tr>
                     <td class="auto-style5">
-            <asp:Image ID="Image2" runat="server" ImageUrl="~/imgs/identification-card.png" />
+                        <asp:Image ID="Image2" runat="server" ImageUrl="~/imgs/identification-card.png" />
                         <asp:TextBox ID="txtCedula" runat="server" placeholder="Cedula"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style5">
-            <asp:Image ID="Image3" runat="server" ImageUrl="~/imgs/person.png" />
+                        <asp:Image ID="Image3" runat="server" ImageUrl="~/imgs/person.png" />
                         <asp:TextBox ID="txtNombre" runat="server" placeholder="Nombre"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style5">
-            <asp:Image ID="Image4" runat="server" ImageUrl="~/imgs/user (4).png" />
+                        <asp:Image ID="Image4" runat="server" ImageUrl="~/imgs/user (4).png" />
                         <asp:TextBox ID="txtApellido" runat="server" placeholder="Apellido"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style5">
-            <asp:Image ID="Image5" runat="server" ImageUrl="~/imgs/location.png" />
+                        <asp:Image ID="Image5" runat="server" ImageUrl="~/imgs/location.png" />
                         <asp:TextBox ID="txtDireccion" runat="server" placeholder="Direccion"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style5">
-            <asp:Image ID="Image6" runat="server" ImageUrl="~/imgs/cell.png" />
+                        <asp:Image ID="Image6" runat="server" ImageUrl="~/imgs/cell.png" />
                         <asp:TextBox ID="txtTelefono" runat="server" placeholder="Telefono"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style5">
-            <asp:Image ID="Image7" runat="server" ImageUrl="~/imgs/email.png" />
+                        <asp:Image ID="Image7" runat="server" ImageUrl="~/imgs/email.png" />
                         <asp:TextBox ID="txtEmail" runat="server" placeholder="Email"></asp:TextBox>
                     </td>
                 </tr>
@@ -129,13 +142,20 @@
                         <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style12" ForeColor="#CCCCCC" NavigateUrl="~/pags/admin.aspx">← Volver</asp:HyperLink>
                     </td>
                 </tr>
+                <tr>
+                    <td class="auto-style13">
+                        <asp:ImageButton ID="imgPrint" runat="server" Height="23px" ImageUrl="~/imgs/print.png" OnClick="imgPrint_Click" Width="24px" />
+                    </td>
+                </tr>
             </table>
             <div class="auto-style18">
                 <asp:Button ID="btnVer" runat="server" BackColor="#006699" BorderStyle="Ridge" Font-Bold="True" ForeColor="White" OnClick="btnVer_Click" Text="Visualizar Clientes" />
-&nbsp;&nbsp;
+                &nbsp;&nbsp;
                 <asp:Button ID="btnActualizar" runat="server" BackColor="#00CC99" Font-Bold="True" ForeColor="White" OnClick="btnActualizar_Click" Text="Actualizar" />
-&nbsp;&nbsp;
+                &nbsp;&nbsp;
                 <asp:Button ID="btnEliminar" runat="server" BackColor="#CC0000" Font-Bold="True" ForeColor="White" OnClick="btnEliminar_Click" Text="Eliminar" />
+                &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnEstado" runat="server" OnClick="btnEstado_Click" Text="Delete" />
             </div>
         </div>
         <div class="auto-style10">
@@ -158,10 +178,10 @@
     </form>
 </body>
 <footer>
-    
-        <div class="auto-style15" style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bold; font-style: normal; text-transform: none; color: #FFFFFF; background-color: #000000">
-            <small>&copy; 2022 </b> - Todos los Derechos Reservados - Cristhian Recalde</small>
-        </div>
+
+    <div class="auto-style15" style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bold; font-style: normal; text-transform: none; color: #FFFFFF; background-color: #000000">
+        <small>&copy; 2022 </b> - Todos los Derechos Reservados - Cristhian Recalde</small>
+    </div>
 
 </footer>
 </html>

@@ -54,6 +54,29 @@ namespace BDD_Parquea_YA_RecaldeCristhian
             conectar.Desconectar();
             return dsDatos;
         }
+
+        public DataSet obteneridLastUsuario()
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_REGISTRO_LAST");
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet actualizarContrasenia(int id, string pass)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_UPDATE_REGISTRO_CONTRA");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+            conectar.AsignarParametros("pass", pass, DbType.String);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
         public DataSet InsertarP(string nombre, int edad, int est)
         {
             conectar.Conectar();
@@ -66,16 +89,58 @@ namespace BDD_Parquea_YA_RecaldeCristhian
             return dsDatos;
         }
 
-        //public DataSet Usuario(string strUsuario, string strClave)
-        //{
-        //    conectar.Conectar();
-        //    conectar.CrearComando("SP_SELECT_CLIENTE");
-        //    //conectar.AsignarParametros("USUARIO", strUsuario, DbType.String);
-        //    //conectar.AsignarParametros("CLAVE", strClave, DbType.String);
-        //    DataSet dsDatos = conectar.EjecutarDataset();
-        //    conectar.Desconectar();
-        //    return dsDatos;
-        //}
+        public DataSet selectAdmins()
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_REGISTRO");
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet actualizarUsuarioAdmin(string nombre, string apellido, string usuario, string pass, string ubi, string telf, string ced, string email, string fecha, int est, int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_UPDATE_REGISTRO");
+            conectar.AsignarParametros("nombre", nombre, DbType.String);
+            conectar.AsignarParametros("apellido", apellido, DbType.String);
+            conectar.AsignarParametros("usuario", usuario, DbType.String);
+            conectar.AsignarParametros("pass", pass, DbType.String);
+            conectar.AsignarParametros("ubi", ubi, DbType.String);
+            conectar.AsignarParametros("telf", telf, DbType.String);
+            conectar.AsignarParametros("ced", ced, DbType.String);
+            conectar.AsignarParametros("email", email, DbType.String);
+            conectar.AsignarParametros("fecha", fecha, DbType.String);
+            conectar.AsignarParametros("est", est.ToString(), DbType.String);
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet elminarAdminUsuario(int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_DELETE_REGISTRO");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet elminarEstadoAdmins(int est, int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_UPDATEESTADO_REGISTRO");
+            conectar.AsignarParametros("est", est.ToString(), DbType.Int32);
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
 
         ///////////////////////////////////////////////////////////////////////////////////
         //clientes
@@ -134,6 +199,18 @@ namespace BDD_Parquea_YA_RecaldeCristhian
             return dsDatos;
         }
 
+        public DataSet elminarEstadoClientes(int est, int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_UPDATEESTADO_CLI");
+            conectar.AsignarParametros("est", est.ToString(), DbType.Int32);
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
         ////autos
         public DataSet selectAutos()
         {
@@ -181,6 +258,18 @@ namespace BDD_Parquea_YA_RecaldeCristhian
         {
             conectar.Conectar();
             conectar.CrearComando("SP_DELETE_AUTOS");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet elminarEstadoAutos(int est, int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_UPDATEESTADO_AUTOS");
+            conectar.AsignarParametros("est", est.ToString(), DbType.Int32);
             conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
 
             DataSet dsDatos = conectar.EjecutarDataset();
@@ -254,6 +343,18 @@ namespace BDD_Parquea_YA_RecaldeCristhian
         {
             conectar.Conectar();
             conectar.CrearComando("SP_DELETE_CONFIG");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet elminarEstadoConfiguraciones(int est, int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_UPDATEESTADO_CONFIG");
+            conectar.AsignarParametros("est", est.ToString(), DbType.Int32);
             conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
 
             DataSet dsDatos = conectar.EjecutarDataset();

@@ -82,7 +82,7 @@
                     <td class="auto-style14">
                         <asp:Image ID="Image2" runat="server" Height="69px" ImageUrl="~/imgs/ParqueaYa  icon (1).png" Width="80px" />
                     </td>
-                    <td rowspan="9">
+                    <td rowspan="10">
                         <asp:Image ID="Image8" runat="server" Height="368px" ImageUrl="~/imgs/94350-gears-lottie-animation.gif" Width="394px" />
                     </td>
                 </tr>
@@ -130,6 +130,11 @@
                         <asp:HyperLink ID="hplVolver" runat="server" CssClass="auto-style11" ForeColor="#CCCCCC" NavigateUrl="~/pags/admin.aspx">← Volver</asp:HyperLink>
                     </td>
                 </tr>
+                <tr>
+                    <td class="auto-style16">
+                        <asp:ImageButton ID="imgPrint" runat="server" Height="23px" ImageUrl="~/imgs/print.png" OnClick="imgPrint_Click" Width="24px" />
+                    </td>
+                </tr>
             </table>
         </div>
         <div class="auto-style18">
@@ -138,6 +143,8 @@
             <asp:Button ID="btnActualizar" runat="server" BackColor="#00CC99" Font-Bold="True" ForeColor="White" OnClick="btnActualizar_Click" Text="Actualizar" />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnEliminar" runat="server" BackColor="#CC0000" Font-Bold="True" ForeColor="White" OnClick="btnEliminar_Click" Text="Eliminar" />
+        &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnEstado" runat="server" OnClick="btnEstado_Click" Text="Delete" />
         </div>
         <div class="auto-style19">
             <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">

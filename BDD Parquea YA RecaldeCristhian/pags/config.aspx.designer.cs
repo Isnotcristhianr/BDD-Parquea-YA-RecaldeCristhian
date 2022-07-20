@@ -159,6 +159,15 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
         protected global::System.Web.UI.WebControls.HyperLink hplVolver;
 
         /// <summary>
+        /// Control imgPrint.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgPrint;
+
+        /// <summary>
         /// Control btnVisualizar.
         /// </summary>
         /// <remarks>
@@ -184,6 +193,15 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEliminar;
+
+        /// <summary>
+        /// Control btnEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEstado;
 
         /// <summary>
         /// Control GridView1.

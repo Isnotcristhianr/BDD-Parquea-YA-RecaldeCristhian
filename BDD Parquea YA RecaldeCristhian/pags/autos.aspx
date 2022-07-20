@@ -31,7 +31,7 @@
     }
     .auto-style17 {
         height: 67px;
-        margin-left: 515px;
+        margin-left: 479px;
         margin-top: 35px;
     }
     .auto-style18 {
@@ -70,7 +70,7 @@
                     <td class="auto-style6">
                         <asp:Image ID="Image2" runat="server" Height="62px" ImageUrl="~/imgs/ParqueaYa  icon (1).png" Width="73px" />
                     </td>
-                    <td class="auto-style13" rowspan="9">
+                    <td class="auto-style13" rowspan="10">
                         <asp:Image ID="Image8" runat="server" Height="327px" ImageUrl="~/imgs/90421-car-in-movement.gif" Width="355px" />
                     </td>
                 </tr>
@@ -117,6 +117,11 @@
                         <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style15" ForeColor="#CCCCCC" NavigateUrl="~/pags/admin.aspx">← Volver</asp:HyperLink>
                     </td>
                 </tr>
+                <tr>
+                    <td class="auto-style14">
+                        <asp:ImageButton ID="imgPrint" runat="server" Height="23px" ImageUrl="~/imgs/print.png" OnClick="imgPrint_Click" Width="24px" />
+                    </td>
+                </tr>
                 </table>
         </div>
         <div class="auto-style17">
@@ -125,6 +130,8 @@
             <asp:Button ID="btnActualizar" runat="server" OnClick="btnActualizar_Click" Text="Actualizar" BackColor="#00CC99" Font-Bold="True" ForeColor="White" />
         &nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnEliminar" runat="server" BackColor="#CC0000" Font-Bold="True" ForeColor="White" OnClick="btnEliminar_Click" Text="Eliminar" />
+        &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnEstado" runat="server" OnClick="btnEstado_Click" Text="Delete" />
         </div>
         <div class="auto-style20">
             <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CssClass="auto-style21">

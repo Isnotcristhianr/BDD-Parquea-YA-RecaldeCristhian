@@ -132,6 +132,7 @@
     <Content Include="imgs\animation_500_l5fjjsp9.gif" />
     <Content Include="imgs\animation_500_l5fkmozk.gif" />
     <Content Include="imgs\animation_500_l5fm1izw.gif" />
+    <Content Include="imgs\animation_500_l5u3koh5.gif" />
     <Content Include="imgs\animation_640_l5e8416y.gif" />
     <Content Include="imgs\animation_640_l5fea9ve.gif" />
     <Content Include="imgs\bannerWeb2.png" />
@@ -162,6 +163,7 @@
     <Content Include="imgs\print.png" />
     <Content Include="imgs\production ID_4047768.mp4" />
     <Content Include="imgs\user %284%29.png" />
+    <Content Include="imgs\user %285%29.png" />
     <Content Include="pags\admin.aspx" />
     <Content Include="pags\agregar.aspx" />
     <Content Include="pags\autos.aspx" />
@@ -173,6 +175,7 @@
     <Content Include="pags\olvide.aspx" />
     <Content Include="pags\registro.aspx" />
     <Content Include="pags\test.aspx" />
+    <Content Include="pags\Users.aspx" />
     <Content Include="pags\Welcome.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -315,6 +318,13 @@
     </Compile>
     <Compile Include="pags\test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pags\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pags\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
     <Compile Include="pags\Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>

@@ -80,8 +80,9 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                                 {
                                                     //insert
                                                     DataSet dsDatos = datos.insertarUsuario(txtNombre.Text, txtApellido.Text, txtUser.Text, txtPassword.Text,txtUbi.Text, txtTelf.Text, txtId.Text, txtEmail.Text, txtDate.Text, 1);
+                                                    DataSet dsDatos2 = datos.obteneridLastUsuario();
+                                                    String msg = dsDatos2.Tables[0].Rows[0]["reg_id"].ToString();
 
-                                                    MsgBox("alert", "Se ha registrado usuario: "+ txtNombre.Text);
                                                     txtNombre.Text = "";
                                                     txtApellido.Text = "";
                                                     txtUser.Text = "";
@@ -91,7 +92,9 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                                     txtTelf.Text = "";
                                                     txtEmail.Text = "";
                                                     txtId.Text = "";
-                                                    Response.Redirect("inicio.aspx");
+                                                    //Response.Redirect("inicio.aspx");
+                                                    MsgBox("alert", "Se ha registrado usuario: " + txtNombre.Text + "Codigo de recuperacion: " + msg);
+
                                                 }
                                                 else
                                                 {

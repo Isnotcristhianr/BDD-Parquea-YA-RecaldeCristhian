@@ -69,6 +69,8 @@
         <div>
             <table class="auto-style1" style="background-color: #FFFFFF; border-radius:3%">
                 <tr>
+                    <td class="auto-style21" style="border-color: #CCCCCC; background-color: #FFFFFF">
+                        &nbsp;</td>
                     <td class="auto-style21" colspan="4" style="border-color: #CCCCCC; background-color: #FFFFFF">
                         <asp:Label ID="lblUsuario" runat="server" CssClass="auto-style22"></asp:Label>
                     </td>
@@ -77,14 +79,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" colspan="4" style="border-color: #CCCCCC; background-color: #FFFFFF">
+                    <td class="auto-style3" colspan="5" style="border-color: #CCCCCC; background-color: #FFFFFF">
                         <asp:Image ID="Image2" runat="server" Height="75px" ImageUrl="~/imgs/ParqueaYa  icon (1).png" Width="82px" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style20" colspan="4">Administrador del Parqueadero</td>
+                    <td class="auto-style20" colspan="5">Administrador del Parqueadero</td>
                 </tr>
                 <tr>
+                    <td style="background-color: #FFFFFF" class="auto-style18">
+                        <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/imgs/user (5).png" OnClick="ImageButton1_Click" Height="27px" Width="28px" />
+                        Usuarios</td>
                     <td style="background-color: #FFFFFF" class="auto-style18">
                         <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/imgs/management.png" OnClick="ImageButton1_Click" />
                         Clientes</td>
@@ -99,7 +104,7 @@
                         Facturar</td>
                 </tr>
                 <tr>
-                    <td style="background-color: #FFFFFF" class="auto-style13" colspan="4">
+                    <td style="background-color: #FFFFFF" class="auto-style13" colspan="5">
                         <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style14" ForeColor="#CCCCCC" NavigateUrl="~/pags/inicio.aspx">← Volver</asp:HyperLink>
                     </td>
                 </tr>
