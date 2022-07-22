@@ -62,23 +62,38 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                 }
                                 else
                                 {
-                                    //insert
-                                    DataSet dsDatos = datos.insertarAutos(txtCedula.Text, txtMatricula.Text, txtTipo.Text, txtDate.Text, txtHoraIngreso.Text, 1);
 
-                                    //ver actualizado
-                                    dsDatos = datos.selectAutos();
-                                    GridView1.DataSource = dsDatos.Tables[0];
-                                    GridView1.DataBind();
+                                    //validacion
+                                    DataSet dsDatos = datos.VerificarAutoCedulaClientes(txtCedula.Text);
+                                    if (dsDatos.Tables[0].Rows.Count > 0)
+                                    {
+                                        //insert
+                                        DataSet dsDatos2 = datos.insertarAutos(txtCedula.Text, txtMatricula.Text, txtTipo.Text, txtDate.Text, txtHoraIngreso.Text, 1);
 
-                                    MsgBox("alert", "Se ha insertado el auto");
+                                        //inner join
+                                        DataSet dsDatos3 = datos.innerJoinCliAutos();
+
+                                        //ver actualizado
+                                        dsDatos = datos.selectAutos();
+                                        GridView1.DataSource = dsDatos.Tables[0];
+                                        GridView1.DataBind();
+
+                                        MsgBox("alert", "Se ha insertado el auto");
 
 
-                                    MsgBox("alert", "Se ha ingresado el automovil Matricula: " + txtMatricula.Text);
-                                    txtCedula.Text = "";
-                                    txtDate.Text = "";
-                                    txtHoraIngreso.Text = "";
-                                    txtMatricula.Text = "";
-                                    txtTipo.Text = "";
+                                        MsgBox("alert", "Se ha ingresado el automovil Matricula: " + txtMatricula.Text);
+                                        txtCedula.Text = "";
+                                        txtDate.Text = "";
+                                        txtHoraIngreso.Text = "";
+                                        txtMatricula.Text = "";
+                                        txtTipo.Text = "";
+                                    }
+                                    else
+                                    {
+                                        MsgBox("alert", "Cedula no existe");
+                                    }
+
+                                   
                                 }
                             }
                         }

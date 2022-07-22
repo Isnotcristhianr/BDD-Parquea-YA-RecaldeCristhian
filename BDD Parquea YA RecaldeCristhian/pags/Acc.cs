@@ -277,6 +277,16 @@ namespace BDD_Parquea_YA_RecaldeCristhian
             return dsDatos;
         }
 
+        public DataSet VerificarAutoCedulaClientes(string ced)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_CedCli");
+            conectar.AsignarParametros("ced", ced, DbType.String);
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
         /////////configuraciones
         public DataSet selectConfiguraciones()
         {
@@ -361,5 +371,38 @@ namespace BDD_Parquea_YA_RecaldeCristhian
             conectar.Desconectar();
             return dsDatos;
         }
+
+        public DataSet obteneridLastConfig()
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_Update_config_last");
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+        ////////////inner join///////////////
+        public DataSet innerJoinCliAutos()
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_INNERJOIN_CLIENTESAUTOS");
+            
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet innerJoinFacturar(string ced)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_INNERJOIN_CLIENTESAUTOS2");
+            conectar.AsignarParametros("ced", ced, DbType.String);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+
     }
 }

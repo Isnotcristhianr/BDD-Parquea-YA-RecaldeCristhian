@@ -65,6 +65,7 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                             MsgBox("alert", "Ingrese un email para el cliente");
                                         }
                                         else {
+
                                             //insertar
                                             DataSet dsDatos = datos.insertarClientes(txtCedula.Text, txtNombre.Text, txtApellido.Text,txtDireccion.Text, txtTelefono.Text,txtEmail.Text,1);
 

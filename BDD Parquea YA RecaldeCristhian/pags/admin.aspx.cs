@@ -19,7 +19,7 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("clientes.aspx");
+            Response.Redirect("Users.aspx");
 
         }
 

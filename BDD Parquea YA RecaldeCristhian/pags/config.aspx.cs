@@ -72,18 +72,24 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                                     //insert
                                     DataSet dsDatos = datos.insertarConfiguraciones(int.Parse(txtDisponibles.Text), double.Parse(txtMoney.Text), int.Parse(txtIva.Text),txtHorarioInicio.Text, txtHorarioFin.Text, 1);
 
-                                //ver actualizado
-                                dsDatos = datos.selectConfiguraciones();
-                                GridView1.DataSource = dsDatos.Tables[0];
-                                GridView1.DataBind();
+                                    //cambiar estado anterior
+                                    DataSet dsDatos2 = datos.obteneridLastConfig();
+                                    int id = int.Parse(dsDatos2.Tables[0].Rows[0]["config_id"].ToString());
+                                    DataSet dsDatos3 = datos.elminarEstadoConfiguraciones(0, (id-1));
 
-                                txtDisponibles.Text = "";
+
+                                    //ver actualizado
+                                    dsDatos = datos.selectConfiguraciones();
+                                    GridView1.DataSource = dsDatos.Tables[0];
+                                    GridView1.DataBind();
+
+                                    txtDisponibles.Text = "";
                                     txtMoney.Text = "";
                                     txtIva.Text = "";
                                     txtHorarioInicio.Text = "";
                                     txtHorarioFin.Text = "";
 
-                                    MsgBox("alert", "Se ha configurado Satisfactoriamente: " +
+                                        MsgBox("alert", "Se ha configurado Satisfactoriamente: " +
                                         " " + "Disponibilidad: " + disp +
                                         " " + "Precio: " + money +
                                         " " + "Iva: " + iva +
@@ -99,7 +105,7 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
             catch (Exception)
             {
                 MsgBox("alert", "Error");
-    }
+            }
 }
 
         //alertas

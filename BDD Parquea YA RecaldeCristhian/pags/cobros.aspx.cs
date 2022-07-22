@@ -4,11 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+//usings
+using System.Text;
+using System.Data;
+using System.Data.Common;
+using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace BDD_Parquea_YA_RecaldeCristhian.pags
 {
     public partial class cobros : System.Web.UI.Page
     {
+        Acc datos = new Acc();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -17,6 +25,13 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
             }
             txtbFecha.Text = DateTime.Now.ToShortDateString();
             txtbFecha.Enabled = false;
+            txtCedula.Text = "";
+            txtApellido.Text = "";
+            txtbFecha.Text = "";
+            txtDireccion.Text = "";
+            txtEmail.Text = "";
+            txtNombre.Text = "";
+            txtTelefono.Text = "";
 
         }
 
@@ -30,8 +45,27 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                 }
                 else
                 {
-                    MsgBox("alert", "Se ha facturado correctamente para: " + txtCedula.Text);
-                    txtCedula.Text = "";
+                    //validacion
+                    DataSet dsDatos = datos.VerificarAutoCedulaClientes(txtCedula.Text);
+                    if (dsDatos.Tables[0].Rows.Count > 0)
+                    {
+                        //inner join con ceds
+                        dsDatos = datos.innerJoinFacturar(txtCedula.Text);
+
+                        MsgBox("alert", "Se ha facturado correctamente para: " + txtCedula.Text);
+                        txtCedula.Text = "";
+                    }
+                    else
+                    {
+                        MsgBox("alert", "Cedula no existe");
+                        txtCedula.Text = "";
+                        txtApellido.Text = "";
+                        txtbFecha.Text = "";
+                        txtDireccion.Text = "";
+                        txtEmail.Text = "";
+                        txtNombre.Text = "";
+                        txtTelefono.Text = "";
+                    }
                 }
             }
             catch (Exception)
@@ -56,6 +90,12 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
         "</script>";
 
             Page.RegisterStartupScript("PopupScript", popupScript);
+
+        }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            MsgBox("alert", "click cb");
 
         }
     }
