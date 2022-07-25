@@ -282,6 +282,73 @@ namespace BDD_Parquea_YA_RecaldeCristhian
             conectar.Conectar();
             conectar.CrearComando("SP_SELECT_CedCli");
             conectar.AsignarParametros("ced", ced, DbType.String);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet selectNombreCedulaCliente(string ced)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_CedCliNombre");
+            conectar.AsignarParametros("ced", ced, DbType.String);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet selectApellidoCedulaCliente(string ced)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_CedCliApellido");
+            conectar.AsignarParametros("ced", ced, DbType.String);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet selectTelefonoCedulaCliente(string ced)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_CedCliTelefono");
+            conectar.AsignarParametros("ced", ced, DbType.String);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet selectDirCedulaCliente(string ced)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_CedCliDireccion");
+            conectar.AsignarParametros("ced", ced, DbType.String);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet selectEmailCedulaCliente(string ced)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_CedCliEmail");
+            conectar.AsignarParametros("ced", ced, DbType.String);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet selectTimeCedulaCliente(string ced)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_SELECT_CedCliHora");
+            conectar.AsignarParametros("ced", ced, DbType.String);
+
             DataSet dsDatos = conectar.EjecutarDataset();
             conectar.Desconectar();
             return dsDatos;
@@ -381,6 +448,28 @@ namespace BDD_Parquea_YA_RecaldeCristhian
             conectar.Desconectar();
             return dsDatos;
         }
+
+        public DataSet obteneridLastPVP(int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_Select_ConfigLastPVU");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
+
+        public DataSet obteneridLastIVA(int id)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_Select_ConfigLastIVA");
+            conectar.AsignarParametros("id", id.ToString(), DbType.Int32);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
         ////////////inner join///////////////
         public DataSet innerJoinCliAutos()
         {
@@ -395,7 +484,7 @@ namespace BDD_Parquea_YA_RecaldeCristhian
         public DataSet innerJoinFacturar(string ced)
         {
             conectar.Conectar();
-            conectar.CrearComando("SP_INNERJOIN_CLIENTESAUTOS2");
+            conectar.CrearComando("SP_INNERJOIN_CLIENTESAUTOSCedula");
             conectar.AsignarParametros("ced", ced, DbType.String);
 
             DataSet dsDatos = conectar.EjecutarDataset();
@@ -403,6 +492,16 @@ namespace BDD_Parquea_YA_RecaldeCristhian
             return dsDatos;
         }
 
+        public DataSet innerJoinContar(string ced)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_INNERJOIN_ContarAC");
+            conectar.AsignarParametros("ced", ced, DbType.String);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
 
     }
 }

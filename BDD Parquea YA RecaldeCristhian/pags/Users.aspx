@@ -156,7 +156,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style27">
-                        <asp:HyperLink ID="hplVolver0" runat="server" CssClass="auto-style26" ForeColor="Gray" NavigateUrl="~/pags/inicio.aspx">← Volver</asp:HyperLink>
+                        <asp:HyperLink ID="hplVolver0" runat="server" CssClass="auto-style26" ForeColor="Gray" NavigateUrl="~/pags/admin.aspx">← Volver</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>

@@ -38,62 +38,69 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                 }
                 else
                 {
-                    if (txtMatricula.Text == "")
+                    if (txtCedula.Text == "")
                     {
-                        MsgBox("alert", "Ingrese la matricula para el automovil");
+                        MsgBox("alert", "Ingrese una cedula para validar para el automovil");
+
                     }
-                    else
-                    {
-                        if (txtTipo.Text == "")
+                    else {
+                        if (txtMatricula.Text == "")
                         {
-                            MsgBox("alert", "Ingrese el tipo de automovil");
+                            MsgBox("alert", "Ingrese la matricula para el automovil");
                         }
                         else
                         {
-                            if (txtDate.Text == "")
+                            if (txtTipo.Text == "")
                             {
-                                MsgBox("alert", "Ingrese la fecha de ingreso para el automovil");
+                                MsgBox("alert", "Ingrese el tipo de automovil");
                             }
                             else
                             {
-                                if (txtHoraIngreso.Text == "")
+                                if (txtDate.Text == "")
                                 {
-                                    MsgBox("alert", "Ingrese la hora de ingreso para el automovil");
+                                    MsgBox("alert", "Ingrese la fecha de ingreso para el automovil");
                                 }
                                 else
                                 {
-
-                                    //validacion
-                                    DataSet dsDatos = datos.VerificarAutoCedulaClientes(txtCedula.Text);
-                                    if (dsDatos.Tables[0].Rows.Count > 0)
+                                    if (txtHoraIngreso.Text == "")
                                     {
-                                        //insert
-                                        DataSet dsDatos2 = datos.insertarAutos(txtCedula.Text, txtMatricula.Text, txtTipo.Text, txtDate.Text, txtHoraIngreso.Text, 1);
-
-                                        //inner join
-                                        DataSet dsDatos3 = datos.innerJoinCliAutos();
-
-                                        //ver actualizado
-                                        dsDatos = datos.selectAutos();
-                                        GridView1.DataSource = dsDatos.Tables[0];
-                                        GridView1.DataBind();
-
-                                        MsgBox("alert", "Se ha insertado el auto");
-
-
-                                        MsgBox("alert", "Se ha ingresado el automovil Matricula: " + txtMatricula.Text);
-                                        txtCedula.Text = "";
-                                        txtDate.Text = "";
-                                        txtHoraIngreso.Text = "";
-                                        txtMatricula.Text = "";
-                                        txtTipo.Text = "";
+                                        MsgBox("alert", "Ingrese la hora de ingreso para el automovil");
                                     }
                                     else
                                     {
-                                        MsgBox("alert", "Cedula no existe");
-                                    }
 
-                                   
+                                        //validacion
+                                        DataSet dsDatos = datos.VerificarAutoCedulaClientes(txtCedula.Text);
+                                        if (dsDatos.Tables[0].Rows.Count > 0)
+                                        {
+                                            //insert
+                                            DataSet dsDatos2 = datos.insertarAutos(txtCedula.Text, txtMatricula.Text, txtTipo.Text, txtDate.Text, txtHoraIngreso.Text, 1);
+
+                                            //inner join
+                                            DataSet dsDatos3 = datos.innerJoinCliAutos();
+
+                                            //ver actualizado
+                                            dsDatos = datos.selectAutos();
+                                            GridView1.DataSource = dsDatos.Tables[0];
+                                            GridView1.DataBind();
+
+                                            MsgBox("alert", "Se ha insertado el auto");
+
+
+                                            MsgBox("alert", "Se ha ingresado el automovil Matricula: " + txtMatricula.Text);
+                                            txtCedula.Text = "";
+                                            txtDate.Text = "";
+                                            txtHoraIngreso.Text = "";
+                                            txtMatricula.Text = "";
+                                            txtTipo.Text = "";
+                                        }
+                                        else
+                                        {
+                                            MsgBox("alert", "Cedula no existe");
+                                        }
+
+
+                                    }
                                 }
                             }
                         }
