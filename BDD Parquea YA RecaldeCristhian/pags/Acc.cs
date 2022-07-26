@@ -470,6 +470,18 @@ namespace BDD_Parquea_YA_RecaldeCristhian
             conectar.Desconectar();
             return dsDatos;
         }
+
+        public DataSet pagarEstadoAuto0A(int est, String ced)
+        {
+            conectar.Conectar();
+            conectar.CrearComando("SP_UPDATEESTADO_AUTOSCEDULA");
+            conectar.AsignarParametros("est", est.ToString(), DbType.Int32);
+            conectar.AsignarParametros("ced", ced, DbType.String);
+
+            DataSet dsDatos = conectar.EjecutarDataset();
+            conectar.Desconectar();
+            return dsDatos;
+        }
         ////////////inner join///////////////
         public DataSet innerJoinCliAutos()
         {

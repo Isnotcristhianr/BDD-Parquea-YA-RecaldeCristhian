@@ -88,7 +88,7 @@
                 </tr>
                 <tr>
                     <td style="background-color: #FFFFFF" class="auto-style18">
-                        <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/imgs/user (5).png" OnClick="ImageButton1_Click" Height="27px" Width="28px" />
+                        <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/imgs/user (5).png" OnClick="ImageButton5_Click1" />
                         Usuarios</td>
                     <td style="background-color: #FFFFFF" class="auto-style18">
                         <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/imgs/management.png" OnClick="ImageButton1_Click" />

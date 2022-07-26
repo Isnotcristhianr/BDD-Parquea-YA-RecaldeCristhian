@@ -182,6 +182,28 @@ namespace BDD_Parquea_YA_RecaldeCristhian.pags
                     //inner join con ceds
                     DataSet dsDatos = datos.innerJoinFacturar(txtCedula.Text);
 
+                    //pagar
+                    DataSet pagar = datos.pagarEstadoAuto0A(0, txtCedula.Text);
+                    MsgBox("alert", "Pago completado");
+                    txtNombre.Text = "";
+                    txtApellido.Text = "";
+                    txtCedula.Text = "";
+                    txtDireccion.Text = "";
+                    txtTelefono.Text = "";
+                    lblCantidad.Text = "";
+                    lblDetalle.Text = "";
+                    lblDetalleTimeIngreso.Text = "";
+                    lblDetalleTimeSalida.Text = "";
+                    lblIva.Text = "";
+                    lblPVF.Text = "";
+                    lblPVU.Text = "";
+                    lblSubtotal.Text = "";
+                    lblTime.Text = "";
+                    lblTotal1.Text = "";
+                    
+                    //Response.Redirect("inicio.aspx");
+
+
                 }
             }
             catch (Exception) 

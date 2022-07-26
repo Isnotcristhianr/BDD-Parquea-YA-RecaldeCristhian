@@ -35,7 +35,7 @@
         margin-top: 35px;
     }
     .auto-style18 {
-        height: 165px;
+        height: 500px;
     }
     .auto-style19 {
         color: #004AAD;
